@@ -23,5 +23,6 @@
     "devDependencies": {
         "@vendure/common": "^2.2.7-bb",
         "@vendure/core": "^2.2.7-bb"
-    }
+    },
+    "gitHead": "43a6aa9538de94adf4a8e8c927b20b5630a39a8b"
 }
