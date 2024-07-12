@@ -1,3 +1,6 @@
+## <small>2.2.7-bb.1 (2024-07-12)</small>
+
+
 ## <small>2.2.7-bb.0 (2024-07-12)</small>
 
 
@@ -1646,7 +1649,7 @@
 * **admin-ui** Expose `registerAlert` provider for custom UI alerts ([698ea0c](https://github.com/TheValkDokk/vendure/commit/698ea0c)), closes [#2503](https://github.com/TheValkDokk/vendure/issues/2503)
 * **admin-ui** Expose provider for defining page tabs ([f97dd9d](https://github.com/TheValkDokk/vendure/commit/f97dd9d))
 * **admin-ui** Expose providers to nav menu routerLink function ([1bae40e](https://github.com/TheValkDokk/vendure/commit/1bae40e))
-* **admin-ui** Expose public API at @vendure/admin-ui/devkit ([c2742ec](https://github.com/TheValkDokk/vendure/commit/c2742ec))
+* **admin-ui** Expose public API at @bb-vendure/admin-ui/devkit ([c2742ec](https://github.com/TheValkDokk/vendure/commit/c2742ec))
 * **admin-ui** Expose services to ActionBarItem onClick function ([e44d372](https://github.com/TheValkDokk/vendure/commit/e44d372)), closes [#247](https://github.com/TheValkDokk/vendure/issues/247)
 * **admin-ui** Extend custom field controls to support new options ([019cd02](https://github.com/TheValkDokk/vendure/commit/019cd02)), closes [#85](https://github.com/TheValkDokk/vendure/issues/85)
 * **admin-ui** Facet detail component with create / update of Facet ([bb5d0bf](https://github.com/TheValkDokk/vendure/commit/bb5d0bf))
@@ -2786,11 +2789,11 @@ to the "AddingItems" state. This allows e.g. event listeners to pick up newly-cr
 * Some ON DELETE behaviour was incorrectly defined in the database schema, and has how been fixed. This will require a non-destructive migration.
 * The "facetIds" field of the SearchInput type has been renamed to "facetValueIds" to better reflect the expected id type.
 * The `'facetValueIds'` type has been removed from the `ConfigArgType` type, and replaced by `'ID'` and the `list` option. This change only affects you if you have created custom CollectionFilters of PromotionActions/Conditions using the `'facetValueIds'` type for an argument.
-* The `@vendure/testing` package now requires you to explicitly register initializers for the databases you with to test against. This change enables e2e tests to be run against any database supported by TypeORM. The `dataDir` option has been removed from the call to the `TestServer.init()` method, as it is specific to the SqljsInitializer:
+* The `@bb-vendure/testing` package now requires you to explicitly register initializers for the databases you with to test against. This change enables e2e tests to be run against any database supported by TypeORM. The `dataDir` option has been removed from the call to the `TestServer.init()` method, as it is specific to the SqljsInitializer:
 
 before:
 ```TypeScript
-import { createTestEnvironment, testConfig } from '@vendure/testing';
+import { createTestEnvironment, testConfig } from '@bb-vendure/testing';
 
 describe('my e2e test suite', () => {
     const { server, adminClient } = createTestEnvironment(testConfig);
@@ -2810,7 +2813,7 @@ describe('my e2e test suite', () => {
 
 after:
 ```TypeScript
-import { createTestEnvironment, registerInitializer, SqljsInitializer, testConfig } from '@vendure/testing';
+import { createTestEnvironment, registerInitializer, SqljsInitializer, testConfig } from '@bb-vendure/testing';
 
 registerInitializer('sqljs', new SqljsInitializer(path.join(__dirname, '__data__')));
 
@@ -2839,9 +2842,9 @@ a database migration with care taken to preserve exiting data.
 a simple array of Channels.
 * The `customer` and `user` tables have received some non-destructive modifications, requiring a DB migration.
 * The `generateVariantsForProduct` mutation has been removed
-* The `ID` type in `@vendure/common/lib/generated-types` & `@vendure/common/lib/generated-shop-types` is now correctly typed as `string | number`, whereas previously it was `string`. If you are using any generated types in your plugin code, this may lead to TypeScript compiler errors which will need to be corrected.
+* The `ID` type in `@bb-vendure/common/lib/generated-types` & `@bb-vendure/common/lib/generated-shop-types` is now correctly typed as `string | number`, whereas previously it was `string`. If you are using any generated types in your plugin code, this may lead to TypeScript compiler errors which will need to be corrected.
 * The `languageCode` argument has been removed from all Shop API queries, namely `product`, `products`, `collection` and `collections`. Instead, LanguageCode should be specified as a query param.
-* The `LocalAssetStorageStrategy` class has been removed from `@vendure/core` and now lives in the `@vendure/asset-server-plugin` package.
+* The `LocalAssetStorageStrategy` class has been removed from `@bb-vendure/core` and now lives in the `@bb-vendure/asset-server-plugin` package.
 * The `Order` entity now has a new column, `taxZoneId`. This is used to more efficiently track changes to the active tax zone, and therefore reduce the number of tax calculations to be performed on an Order. This change will require a migration which should be routine.
 * The `OrderItem.taxRate` column type in the database has been changed from `int` to `decimal`. You will need to perform a migration to update this column and depending on your database type, you may need to manually edit the migration script in order to preserve the old values.
 * The `OrderItem.unitPrice` is now _always_ given as the net (without tax) price
@@ -3028,7 +3031,7 @@ with the fragment spread syntax `...on Order {...}`.
 implemented a custom OrderMergeStrategy, you'll need to update it to return the expected type.
 * The Stripe plugin has been made channel aware. This means your api key and webhook secret are now stored in the database, per channel, instead of environment variables.
 
-To migrate to v2 of the Stripe plugin from @vendure/payments you need to:
+To migrate to v2 of the Stripe plugin from @bb-vendure/payments you need to:
 
 Remove the apiKey and webhookSigningSecret from the plugin initialization in vendure-config.ts:
 ```diff
@@ -3058,7 +3061,7 @@ The `getEntityOrThrow()` and `findOneInChannel()` helper functions have been dep
 * The update of Apollo Server to v4 includes some breaking changes if you have
 defined any custom ApolloServerPlugins. See the Apollo migration guide for full details:
 https://www.apollographql.com/docs/apollo-server/migration/
-* The upgrade of the Admin UI to Angular v10 means that if you are using the `@vendure/ui-devkit` package to compile an extended version of the Admin UI, you need to have at least TypeScript v3.9.2 installed.
+* The upgrade of the Admin UI to Angular v10 means that if you are using the `@bb-vendure/ui-devkit` package to compile an extended version of the Admin UI, you need to have at least TypeScript v3.9.2 installed.
 * The way custom Order states are defined has changed. The `VendureConfig.orderOptions.process` property now accepts an **array** of objects implementing the `CustomerOrderProcess` interface. This interface is more-or-less the same as the old `OrderProcessOptions` object, but the use of an array now allows better composition, and since `CustomerOrderProcess` inherits from `InjectableStrategy`, this means providers can now be injected and used in the custom order process logic.
 * The way shipping charges on Orders are represented has been changed - an Order
 now contains multiple ShippingLine entities, each of which has a reference to a ShippingMethod.
@@ -3069,8 +3072,8 @@ release blog post for details.
 * This relates to Admin UI extensions. The `onClick` function signature of any custom ActionBarItems has changed - the second parameter used to be the `ActivatedRoute` - it is now an object containing `ActivatedRoute` plus an instance of `DataService` and `NotificationService`.
 * This release introduces a re-architected solution for handling extensions to the Admin UI. *If you do not use the ui extensions feature, you will not need to change anything*. For those already using ui extensions, these are the changes:
 
-* The `@vendure/admin-ui-plugin` now contains only the default admin ui app.
-* To create extensions, you will need to install `@vendure/ui-devkit`, which exposes a `compileUiExtensions()` function.
+* The `@bb-vendure/admin-ui-plugin` now contains only the default admin ui app.
+* To create extensions, you will need to install `@bb-vendure/ui-devkit`, which exposes a `compileUiExtensions()` function.
 * Here is an example of how the config differs:
   ```ts
     // before
@@ -3085,7 +3088,7 @@ release blog post for details.
   ```
   ```ts
     // after
-  import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
+  import { compileUiExtensions } from '@bb-vendure/ui-devkit/compiler';
 
   // ...
 
@@ -3132,7 +3135,7 @@ release blog post for details.
   - CustomFieldConfig,
   + CustomFieldConfigType,
     CustomFieldControl,
-  } from '@vendure/admin-ui/core';
+  } from '@bb-vendure/admin-ui/core';
 
   @Component({
       // ...
@@ -3245,7 +3248,7 @@ pass options to the plugin, e.g.:
 ## <small>2.2.2 (2024-04-25)</small>
 
 This release contains no changes - it was published to fix a mistake 
-in the publishing of the `@vendure/admin-ui@2.2.1` package.
+in the publishing of the `@bb-vendure/admin-ui@2.2.1` package.
 
 ## <small>2.2.1 (2024-04-25)</small>
 
