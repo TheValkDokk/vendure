@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { JobState, LanguageCode } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
-import { notNullOrUndefined } from '@vendure/common/lib/shared-utils';
-import { unique } from '@vendure/common/lib/unique';
+import { JobState, LanguageCode } from '@bb-vendure/common/lib/generated-types';
+import { ID } from '@bb-vendure/common/lib/shared-types';
+import { notNullOrUndefined } from '@bb-vendure/common/lib/shared-utils';
+import { unique } from '@bb-vendure/common/lib/unique';
 import { Observable } from 'rxjs';
 import { FindManyOptions, In } from 'typeorm';
 

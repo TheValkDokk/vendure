@@ -12,12 +12,12 @@ logic of your application.
 
 Plugins in Vendure allow one to:
 
-- Modify the VendureConfig object, such as defining custom fields on existing entities.
-- Extend the GraphQL APIs, including modifying existing types and adding completely new queries and mutations.
-- Define new database entities and interact directly with the database.
-- Interact with external systems that you need to integrate with.
-- Respond to events such as new orders being placed.
-- Trigger background tasks to run on the worker process.
+-   Modify the VendureConfig object, such as defining custom fields on existing entities.
+-   Extend the GraphQL APIs, including modifying existing types and adding completely new queries and mutations.
+-   Define new database entities and interact directly with the database.
+-   Interact with external systems that you need to integrate with.
+-   Respond to events such as new orders being placed.
+-   Trigger background tasks to run on the worker process.
 
 … and more!
 
@@ -36,7 +36,7 @@ email sending, and search. For documentation on these, see the [Core Plugins ref
 Here's a bare-minimum example of a plugin:
 
 ```ts title="src/plugins/avatar-plugin/avatar.plugin.ts"
-import { LanguageCode, PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { LanguageCode, PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 
 @VendurePlugin({
     imports: [PluginCommonModule],
@@ -58,7 +58,7 @@ This plugin does one thing only: it adds a new custom field to the `Customer` en
 The plugin is then imported into the `VendureConfig`:
 
 ```ts title="src/vendure-config.ts"
-import { VendureConfig } from '@vendure/core';
+import { VendureConfig } from '@bb-vendure/core';
 import { AvatarPlugin } from './plugins/avatar-plugin/avatar.plugin';
 
 export const config: VendureConfig = {
@@ -74,19 +74,19 @@ object on the type [`VendurePluginMetadata`](/reference/typescript-api/plugin/ve
 A VendurePlugin is actually an enhanced version of a [NestJS Module](https://docs.nestjs.com/modules), and supports
 all the metadata properties that NestJS modules support:
 
-- `imports`: Allows importing other NestJS modules in order to make use of their exported providers.
-- `providers`: The providers (services) that will be instantiated by the Nest injector and that may
+-   `imports`: Allows importing other NestJS modules in order to make use of their exported providers.
+-   `providers`: The providers (services) that will be instantiated by the Nest injector and that may
     be shared across this plugin.
-- `controllers`: Controllers allow the plugin to define REST-style endpoints.
-- `exports`: The providers which will be exported from this plugin and made available to other plugins.
+-   `controllers`: Controllers allow the plugin to define REST-style endpoints.
+-   `exports`: The providers which will be exported from this plugin and made available to other plugins.
 
 Additionally, the `VendurePlugin` decorator adds the following Vendure-specific properties:
 
-- `configuration`: A function which can modify the `VendureConfig` object before the server bootstraps.
-- `shopApiExtensions`: Allows the plugin to extend the GraphQL Shop API with new queries, mutations, resolvers & scalars.
-- `adminApiExtensions`: Allows the plugin to extend the GraphQL Admin API with new queries, mutations, resolvers & scalars.
-- `entities`: Allows the plugin to define new database entities.
-- `compatibility`: Allows the plugin to declare which versions of Vendure it is compatible with.
+-   `configuration`: A function which can modify the `VendureConfig` object before the server bootstraps.
+-   `shopApiExtensions`: Allows the plugin to extend the GraphQL Shop API with new queries, mutations, resolvers & scalars.
+-   `adminApiExtensions`: Allows the plugin to extend the GraphQL Admin API with new queries, mutations, resolvers & scalars.
+-   `entities`: Allows the plugin to define new database entities.
+-   `compatibility`: Allows the plugin to declare which versions of Vendure it is compatible with.
 
 :::info
 Since a Vendure plugin is a superset of a NestJS module, this means that many NestJS modules are actually
@@ -98,11 +98,11 @@ valid Vendure plugins!
 Since a VendurePlugin is built on top of the NestJS module system, any plugin (as well as any providers it defines)
 can make use of any of the [NestJS lifecycle hooks](https://docs.nestjs.com/fundamentals/lifecycle-events):
 
-- onModuleInit
-- onApplicationBootstrap
-- onModuleDestroy
-- beforeApplicationShutdown
-- onApplicationShutdown
+-   onModuleInit
+-   onApplicationBootstrap
+-   onModuleDestroy
+-   beforeApplicationShutdown
+-   onApplicationShutdown
 
 :::caution
 Note that lifecycle hooks are run in both the server and worker contexts.
@@ -118,19 +118,16 @@ to the network stack, and the worker has no network part.
 
 ```ts
 import { MiddlewareConsumer, NestModule } from '@nestjs/common';
-import { EventBus, PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { EventBus, PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 import { MyMiddleware } from './api/my-middleware';
 
 @VendurePlugin({
-    imports: [PluginCommonModule]
+    imports: [PluginCommonModule],
 })
 export class MyPlugin implements NestModule {
-
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(MyMiddleware)
-      .forRoutes('my-custom-route');
-  }
+    configure(consumer: MiddlewareConsumer) {
+        consumer.apply(MyMiddleware).forRoutes('my-custom-route');
+    }
 }
 ```
 
@@ -190,7 +187,7 @@ We'll start by creating a new directory to house our plugin, add create the main
 ```
 
 ```ts title="src/plugins/wishlist-plugin/wishlist.plugin.ts"
-import { PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 
 @VendurePlugin({
     imports: [PluginCommonModule],
@@ -217,7 +214,7 @@ First let's create the file to house the entity:
 By convention, we'll store the entity definitions in the `entities` directory of the plugin. Again, this is not a requirement, but it is a good way to keep your plugin organized.
 
 ```ts title="src/plugins/wishlist-plugin/entities/wishlist-item.entity.ts"
-import { DeepPartial, ID, ProductVariant, VendureEntity, EntityId } from '@vendure/core';
+import { DeepPartial, ID, ProductVariant, VendureEntity, EntityId } from '@bb-vendure/core';
 import { Column, Entity, ManyToOne } from 'typeorm';
 
 @Entity()
@@ -245,7 +242,7 @@ Let's break down what's happening here:
 Next we need to register this entity with our plugin:
 
 ```ts title="src/plugins/wishlist-plugin/wishlist.plugin.ts"
-import { PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 import { WishlistItem } from './entities/wishlist-item.entity';
 
 @VendurePlugin({
@@ -262,7 +259,7 @@ We'll now define a new custom field on the Customer entity which will store a li
 Custom fields are defined in the VendureConfig object, and in a plugin we use the `configuration` function to modify the config object:
 
 ```ts title="src/plugins/wishlist-plugin/wishlist.plugin.ts"
-import { PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 import { WishlistItem } from './entities/wishlist-item.entity';
 
 @VendurePlugin({
@@ -296,10 +293,10 @@ In order to make use of this custom field in a type-safe way, we can tell TypeSc
 ```ts title="src/plugins/wishlist-plugin/types.ts"
 import { WishlistItem } from './entities/wishlist-item.entity';
 
-declare module '@vendure/core/dist/entity/custom-entity-fields' {
-  interface CustomCustomerFields {
-    wishlistItems: WishlistItem[];
-  }
+declare module '@bb-vendure/core/dist/entity/custom-entity-fields' {
+    interface CustomCustomerFields {
+        wishlistItems: WishlistItem[];
+    }
 }
 ```
 
@@ -335,7 +332,7 @@ import {
     RequestContext,
     TransactionalConnection,
     UserInputError,
-} from '@vendure/core';
+} from '@bb-vendure/core';
 
 import { WishlistItem } from '../entities/wishlist-item.entity';
 
@@ -421,14 +418,14 @@ export class WishlistService {
 
 Let's break down what's happening here:
 
-- The `WishlistService` class is decorated with the `@Injectable()` decorator. This is a standard NestJS decorator which tells the NestJS dependency injection (DI) system that this class can be injected into other classes. All your services should be decorated with this decorator.
-- The arguments passed to the constructor will be injected by the NestJS DI system. The `connection` argument is a [TransactionalConnection](/reference/typescript-api/data-access/transactional-connection/) instance, which is used to access and manipulate data in the database. The [`ProductVariantService`](/reference/typescript-api/services/product-variant-service/) argument is a built-in Vendure service which contains methods relating to ProductVariants.
-- The [`RequestContext`](/reference/typescript-api/request/request-context/) object is usually the first argument to any service method, and contains information and context about the current request as well as any open database transactions. It should always be passed to the methods of the `TransactionalConnection`.
+-   The `WishlistService` class is decorated with the `@Injectable()` decorator. This is a standard NestJS decorator which tells the NestJS dependency injection (DI) system that this class can be injected into other classes. All your services should be decorated with this decorator.
+-   The arguments passed to the constructor will be injected by the NestJS DI system. The `connection` argument is a [TransactionalConnection](/reference/typescript-api/data-access/transactional-connection/) instance, which is used to access and manipulate data in the database. The [`ProductVariantService`](/reference/typescript-api/services/product-variant-service/) argument is a built-in Vendure service which contains methods relating to ProductVariants.
+-   The [`RequestContext`](/reference/typescript-api/request/request-context/) object is usually the first argument to any service method, and contains information and context about the current request as well as any open database transactions. It should always be passed to the methods of the `TransactionalConnection`.
 
 The service is then registered with the plugin metadata as a provider:
 
 ```ts title="src/plugins/wishlist-plugin/wishlist.plugin.ts"
-import { PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 import { WishlistService } from './services/wishlist.service';
 
 @VendurePlugin({
@@ -491,7 +488,7 @@ The `api-extensions.ts` file is where we define the extensions we will be making
 Next we need to pass these extensions to our plugin's metadata:
 
 ```ts title="src/plugins/wishlist-plugin/wishlist.plugin.ts"
-import { PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 import { shopApiExtensions } from './api/api-extensions';
 
 @VendurePlugin({
@@ -519,7 +516,7 @@ Now that we have defined the GraphQL schema extensions, we need to create a reso
 
 ```ts title="src/plugins/wishlist-plugin/api/wishlist.resolver.ts"
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { Allow, Ctx, Permission, RequestContext, Transaction } from '@vendure/core';
+import { Allow, Ctx, Permission, RequestContext, Transaction } from '@bb-vendure/core';
 
 import { WishlistItem } from '../entities/wishlist-item.entity';
 import { WishlistService } from '../services/wishlist.service';
@@ -555,16 +552,16 @@ export class WishlistShopResolver {
 
 Resolvers are usually "thin" functions that delegate the actual work to a service. Vendure, like NestJS itself, makes heavy use of decorators at the API layer to define various aspects of the resolver. Let's break down what's happening here:
 
-- The `@Resolver()` decorator tells the NestJS DI system that this class is a resolver. Since a Resolver is part of the NestJS DI system, we can also inject dependencies into its constructor. In this case we are injecting the `WishlistService` which we created in the previous step.
-- The `@Mutation()` decorator tells Vendure that this is a mutation resolver. Similarly, `@Query()` decorator defines a query resolver. The name of the method is the name of the query or mutation in the schema.
-- The `@Transaction()` decorator tells Vendure that this resolver method should be wrapped in a database transaction. This is important because we are performing multiple database operations in this method, and we want them to be atomic.
-- The `@Allow()` decorator tells Vendure that this mutation is only allowed for users with the `Owner` permission. The `Owner` permission is a special permission which indicates that the active user should be the owner of this operation.
-- The `@Ctx()` decorator tells Vendure that this method requires access to the `RequestContext` object. Every resolver should have this as the first argument, as it is required throughout the Vendure request lifecycle.
+-   The `@Resolver()` decorator tells the NestJS DI system that this class is a resolver. Since a Resolver is part of the NestJS DI system, we can also inject dependencies into its constructor. In this case we are injecting the `WishlistService` which we created in the previous step.
+-   The `@Mutation()` decorator tells Vendure that this is a mutation resolver. Similarly, `@Query()` decorator defines a query resolver. The name of the method is the name of the query or mutation in the schema.
+-   The `@Transaction()` decorator tells Vendure that this resolver method should be wrapped in a database transaction. This is important because we are performing multiple database operations in this method, and we want them to be atomic.
+-   The `@Allow()` decorator tells Vendure that this mutation is only allowed for users with the `Owner` permission. The `Owner` permission is a special permission which indicates that the active user should be the owner of this operation.
+-   The `@Ctx()` decorator tells Vendure that this method requires access to the `RequestContext` object. Every resolver should have this as the first argument, as it is required throughout the Vendure request lifecycle.
 
 This resolver is then registered with the plugin metadata:
 
 ```ts title="src/plugins/wishlist-plugin/wishlist.plugin.ts"
-import { PluginCommonModule, VendurePlugin } from '@vendure/core';
+import { PluginCommonModule, VendurePlugin } from '@bb-vendure/core';
 import { shopApiExtensions } from './api/api-extensions';
 import { WishlistShopResolver } from './api/wishlist.resolver';
 
@@ -610,7 +607,7 @@ The value of this property is a [semver range](https://docs.npmjs.com/about-sema
 The final step is to add the plugin to the `VendureConfig` object. This is done in the `vendure-config.ts` file:
 
 ```ts title="src/vendure-config.ts"
-import { VendureConfig } from '@vendure/core';
+import { VendureConfig } from '@bb-vendure/core';
 import { WishlistPlugin } from './plugins/wishlist-plugin/wishlist.plugin';
 
 export const config: VendureConfig = {
@@ -662,18 +659,17 @@ mutation Login {
 
 ```json
 {
-  "data": {
-    "login": {
-      "id": "9",
-      "identifier": "alec.breitenberg@gmail.com"
+    "data": {
+        "login": {
+            "id": "9",
+            "identifier": "alec.breitenberg@gmail.com"
+        }
     }
-  }
 }
 ```
 
   </TabItem>
 </Tabs>
-
 
 <Tabs>
 <TabItem value="AddToWishlist mutation" label="AddToWishlist mutation" default>
@@ -695,17 +691,17 @@ mutation AddToWishlist {
 
 ```json
 {
-  "data": {
-    "addToWishlist": [
-      {
-        "id": "4",
-        "productVariant": {
-          "id": "7",
-          "name": "Wireless Optical Mouse"
-        }
-      }
-    ]
-  }
+    "data": {
+        "addToWishlist": [
+            {
+                "id": "4",
+                "productVariant": {
+                    "id": "7",
+                    "name": "Wireless Optical Mouse"
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -713,7 +709,6 @@ mutation AddToWishlist {
 </Tabs>
 
 We can then query the wishlist items:
-
 
 <Tabs>
 <TabItem value="GetWishlist mutation" label="GetWishlist mutation" default>
@@ -735,17 +730,17 @@ query GetWishlist {
 
 ```json
 {
-  "data": {
-    "activeCustomerWishlist": [
-      {
-        "id": "4",
-        "productVariant": {
-          "id": "7",
-          "name": "Wireless Optical Mouse"
-        }
-      }
-    ]
-  }
+    "data": {
+        "activeCustomerWishlist": [
+            {
+                "id": "4",
+                "productVariant": {
+                    "id": "7",
+                    "name": "Wireless Optical Mouse"
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -773,12 +768,11 @@ mutation RemoveFromWishlist {
 
 ```json
 {
-  "data": {
-    "removeFromWishlist": []
-  }
+    "data": {
+        "removeFromWishlist": []
+    }
 }
 ```
 
   </TabItem>
 </Tabs>
-

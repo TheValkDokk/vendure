@@ -49,5 +49,5 @@
         "@bb-vendure/core": "^2.2.7-bb.3",
         "typescript": "5.3.3"
     },
-    "gitHead": "ba30893f5596cfef50aacc1b9fabd3856c72e069"
+    "gitHead": "d87d0f35c2f6e2effe09ef8f666db9cce47768ad"
 }

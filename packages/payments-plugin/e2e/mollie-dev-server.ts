@@ -1,6 +1,6 @@
-import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
-import { DefaultLogger, DefaultSearchPlugin, LogLevel, mergeConfig } from '@vendure/core';
-import { createTestEnvironment, registerInitializer, SqljsInitializer, testConfig } from '@vendure/testing';
+import { AdminUiPlugin } from '@bb-vendure/admin-ui-plugin';
+import { DefaultLogger, DefaultSearchPlugin, LogLevel, mergeConfig } from '@bb-vendure/core';
+import { createTestEnvironment, registerInitializer, SqljsInitializer, testConfig } from '@bb-vendure/testing';
 import gql from 'graphql-tag';
 import localtunnel from 'localtunnel';
 import path from 'path';

@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## AssetServerOptions
 
-<GenerationInfo sourceFile="packages/asset-server-plugin/src/types.ts" sourceLine="72" packageName="@vendure/asset-server-plugin" />
+<GenerationInfo sourceFile="packages/asset-server-plugin/src/types.ts" sourceLine="72" packageName="@bb-vendure/asset-server-plugin" />
 
 The configuration options for the AssetServerPlugin.
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Type } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+import { Type } from '@bb-vendure/common/lib/shared-types';
+import { unique } from '@bb-vendure/common/lib/unique';
 import { SelectQueryBuilder } from 'typeorm';
 
 import { RequestContext } from '../../../api/common/request-context';
@@ -24,7 +24,7 @@ import { mergeDeep } from './merge-deep';
  * @example
  * ```ts
  * import { Injectable } from '\@nestjs/common';
- * import { ID, RequestContext, EntityHydrator, ProductVariantService } from '\@vendure/core';
+ * import { ID, RequestContext, EntityHydrator, ProductVariantService } from '\@bb-vendure/core';
  *
  * \@Injectable()
  * export class MyService {

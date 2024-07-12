@@ -11,14 +11,14 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## FormField
 
-<GenerationInfo sourceFile="packages/admin-ui/src/lib/react/src/react-components/FormField.tsx" sourceLine="22" packageName="@vendure/admin-ui" />
+<GenerationInfo sourceFile="packages/admin-ui/src/lib/react/src/react-components/FormField.tsx" sourceLine="22" packageName="@bb-vendure/admin-ui" />
 
 A wrapper around form fields which provides a label, tooltip and error message.
 
 *Example*
 
 ```ts
-import { FormField } from '@vendure/admin-ui/react';
+import { FormField } from '@bb-vendure/admin-ui/react';
 
 export function MyReactComponent() {
     return (

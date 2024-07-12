@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## ElasticsearchOptions
 
-<GenerationInfo sourceFile="packages/elasticsearch-plugin/src/options.ts" sourceLine="30" packageName="@vendure/elasticsearch-plugin" />
+<GenerationInfo sourceFile="packages/elasticsearch-plugin/src/options.ts" sourceLine="30" packageName="@bb-vendure/elasticsearch-plugin" />
 
 Configuration options for the <a href='/reference/core-plugins/elasticsearch-plugin/#elasticsearchplugin'>ElasticsearchPlugin</a>.
 
@@ -372,7 +372,7 @@ extend input SearchResultSortParameter {
 
 ## SearchConfig
 
-<GenerationInfo sourceFile="packages/elasticsearch-plugin/src/options.ts" sourceLine="395" packageName="@vendure/elasticsearch-plugin" />
+<GenerationInfo sourceFile="packages/elasticsearch-plugin/src/options.ts" sourceLine="395" packageName="@bb-vendure/elasticsearch-plugin" />
 
 Configuration options for the internal Elasticsearch query which is generated when performing a search.
 
@@ -653,7 +653,7 @@ searchConfig: {
 
 ## BoostFieldsConfig
 
-<GenerationInfo sourceFile="packages/elasticsearch-plugin/src/options.ts" sourceLine="680" packageName="@vendure/elasticsearch-plugin" />
+<GenerationInfo sourceFile="packages/elasticsearch-plugin/src/options.ts" sourceLine="680" packageName="@bb-vendure/elasticsearch-plugin" />
 
 Configuration for [boosting](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html#field-boost)
 the scores of given fields when performing a search against a term.

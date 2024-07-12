@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## StripePlugin
 
-<GenerationInfo sourceFile="packages/payments-plugin/src/stripe/stripe.plugin.ts" sourceLine="161" packageName="@vendure/payments-plugin" />
+<GenerationInfo sourceFile="packages/payments-plugin/src/stripe/stripe.plugin.ts" sourceLine="161" packageName="@bb-vendure/payments-plugin" />
 
 Plugin to enable payments through [Stripe](https://stripe.com/docs) via the Payment Intents API.
 
@@ -25,17 +25,17 @@ the Stripe CLI to test your webhook locally. See the _local development_ section
 3. Get the signing secret for the newly created webhook.
 4. Install the Payments plugin and the Stripe Node library:
 
-    `yarn add @vendure/payments-plugin stripe`
+    `yarn add @bb-vendure/payments-plugin stripe`
 
     or
 
-    `npm install @vendure/payments-plugin stripe`
+    `npm install @bb-vendure/payments-plugin stripe`
 
 ## Setup
 
 1. Add the plugin to your VendureConfig `plugins` array:
     ```ts
-    import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
+    import { StripePlugin } from '@bb-vendure/payments-plugin/package/stripe';
 
     // ...
 
@@ -182,7 +182,7 @@ Initialize the Stripe payment plugin
 
 ## StripePluginOptions
 
-<GenerationInfo sourceFile="packages/payments-plugin/src/stripe/types.ts" sourceLine="27" packageName="@vendure/payments-plugin" />
+<GenerationInfo sourceFile="packages/payments-plugin/src/stripe/types.ts" sourceLine="27" packageName="@bb-vendure/payments-plugin" />
 
 Configuration options for the Stripe payments plugin.
 
@@ -226,8 +226,8 @@ Attach extra metadata to Stripe payment intent creation call.
 *Example*
 
 ```ts
-import { EntityHydrator, VendureConfig } from '@vendure/core';
-import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
+import { EntityHydrator, VendureConfig } from '@bb-vendure/core';
+import { StripePlugin } from '@bb-vendure/payments-plugin/package/stripe';
 
 export const config: VendureConfig = {
   // ...
@@ -259,8 +259,8 @@ For example, if you want to provide a `description` for the payment intent, you 
 *Example*
 
 ```ts
-import { VendureConfig } from '@vendure/core';
-import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
+import { VendureConfig } from '@bb-vendure/core';
+import { StripePlugin } from '@bb-vendure/payments-plugin/package/stripe';
 
 export const config: VendureConfig = {
   // ...
@@ -287,8 +287,8 @@ For example, if you want to provide an address for the customer:
 *Example*
 
 ```ts
-import { EntityHydrator, VendureConfig } from '@vendure/core';
-import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
+import { EntityHydrator, VendureConfig } from '@bb-vendure/core';
+import { StripePlugin } from '@bb-vendure/payments-plugin/package/stripe';
 
 export const config: VendureConfig = {
   // ...

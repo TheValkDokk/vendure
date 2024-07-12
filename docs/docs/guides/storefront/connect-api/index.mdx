@@ -20,18 +20,17 @@ server is running locally.
 
 GraphQL requests are made over HTTP, so you can use any HTTP client such as the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to make requests to the Shop API. However, there are also a number of specialized GraphQL clients which can make working with GraphQL APIs easier. Here are some popular options:
 
-* [Apollo Client](https://www.apollographql.com/docs/react): A full-featured client which includes a caching layer and React integration.
-* [urql](https://formidable.com/open-source/urql/): The highly customizable and versatile GraphQL client for React, Svelte, Vue, or plain JavaScript
-* [graphql-request](https://github.com/jasonkuhrt/graphql-request): Minimal GraphQL client supporting Node and browsers for scripts or simple apps
-* [TanStack Query](https://tanstack.com/query/latest): Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte, which can be combined with `graphql-request`.
-
+-   [Apollo Client](https://www.apollographql.com/docs/react): A full-featured client which includes a caching layer and React integration.
+-   [urql](https://formidable.com/open-source/urql/): The highly customizable and versatile GraphQL client for React, Svelte, Vue, or plain JavaScript
+-   [graphql-request](https://github.com/jasonkuhrt/graphql-request): Minimal GraphQL client supporting Node and browsers for scripts or simple apps
+-   [TanStack Query](https://tanstack.com/query/latest): Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte, which can be combined with `graphql-request`.
 
 ## Managing Sessions
 
 Vendure supports two ways to manage user sessions: **cookies** and **bearer token**. The method you choose depends on your requirements, and is specified by the [`authOptions.tokenMethod` property](/reference/typescript-api/auth/auth-options/#tokenmethod) of the VendureConfig. By default, both are enabled on the server:
 
 ```ts title="src/vendure-config.ts"
-import { VendureConfig } from '@vendure/core';
+import { VendureConfig } from '@bb-vendure/core';
 
 export const config: VendureConfig = {
     // ...
@@ -53,7 +52,7 @@ Using cookies is the simpler approach for browser-based applications, since the 
 2. When using cookie-based sessions, you should set the [`authOptions.cookieOptions.secret` property](/reference/typescript-api/auth/cookie-options#secret) to some secret string which will be used to sign the cookies sent to clients to prevent tampering. This string could be hard-coded in your config file, or (better) reside in an environment variable:
 
     ```ts title="src/vendure-config.ts"
-    import { VendureConfig } from '@vendure/core';
+    import { VendureConfig } from '@bb-vendure/core';
 
     export const config: VendureConfig = {
         // ...
@@ -61,11 +60,11 @@ Using cookies is the simpler approach for browser-based applications, since the 
             tokenMethod: ['bearer', 'cookie'],
             // highlight-start
             cookieOptions: {
-                secret: process.env.COOKIE_SESSION_SECRET
-            }
+                secret: process.env.COOKIE_SESSION_SECRET,
+            },
             // highlight-end
-        }
-    }
+        },
+    };
     ```
 
 :::caution
@@ -88,22 +87,22 @@ The workflow would be as follows:
 Here's a simplified example of how that would look:
 
 ```ts
-let token: string | undefined = localStorage.getItem('token')
+let token: string | undefined = localStorage.getItem('token');
 
 export async function request(query: string, variables: any) {
-     // If we already know the token, set the Authorization header.
-     const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    // If we already know the token, set the Authorization header.
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-     const response = await someGraphQlClient(query, variables, headers);
+    const response = await someGraphQlClient(query, variables, headers);
 
-     // Check the response headers to see if Vendure has set the
-     // auth token. The header key "vendure-auth-token" may be set to
-     // a custom value with the authOptions.authTokenHeaderKey config option.
-     const authToken = response.headers.get('vendure-auth-token');
-     if (authToken != null) {
-         token = authToken;
-     }
-     return response.data;
+    // Check the response headers to see if Vendure has set the
+    // auth token. The header key "vendure-auth-token" may be set to
+    // a custom value with the authOptions.authTokenHeaderKey config option.
+    const authToken = response.headers.get('vendure-auth-token');
+    if (authToken != null) {
+        token = authToken;
+    }
+    return response.data;
 }
 ```
 
@@ -135,12 +134,12 @@ export function query(document: string, variables: Record<string, any> = {}) {
         },
         credentials: 'include',
         body: JSON.stringify({
-          query: document,
-          variables,
+            query: document,
+            variables,
         }),
     })
-      .then((res) => res.json())
-      .catch((err) => console.log(err));
+        .then(res => res.json())
+        .catch(err => console.log(err));
 }
 ```
 
@@ -177,7 +176,6 @@ First we'll look at a plain [fetch](https://developer.mozilla.org/en-US/docs/Web
 
 Note that we also include a React hook in this example, but that's just to make it more convenient to use the client
 in a React component - it is not required.
-
 
 <Tabs>
 <TabItem value="client.ts" label="client.ts" default>
@@ -226,8 +224,8 @@ export function query(document: string, variables: Record<string, any> = {}) {
             query: document,
             variables,
         }),
-    // highlight-end
-    }).then((res) => {
+        // highlight-end
+    }).then(res => {
         if (!res.ok) {
             throw new Error(`An error ocurred, HTTP status: ${res.status}`);
         }
@@ -243,21 +241,18 @@ export function query(document: string, variables: Record<string, any> = {}) {
  * Here we have wrapped the `query` function into a React hook for convenient use in
  * React components.
  */
- export function useQuery(
-    document: string,
-    variables: Record<string, any> = {}
-) {
+export function useQuery(document: string, variables: Record<string, any> = {}) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         query(document, variables)
-            .then((result) => {
+            .then(result => {
                 setData(result.data);
                 setError(null);
             })
-            .catch((err) => {
+            .catch(err => {
                 setError(err.message);
                 setData(null);
             })
@@ -335,7 +330,7 @@ export default function App() {
 
 Here's a live version of this example:
 
-<Stackblitz id='vendure-docs-fetch-react' />
+<Stackblitz id="vendure-docs-fetch-react" />
 
 As you can see, the basic implementation with `fetch` is quite straightforward. However, it is also lacking some features that other,
 dedicated client libraries will provide.
@@ -347,17 +342,11 @@ Here's an example configuration for [Apollo Client](https://www.apollographql.co
 Follow the [getting started instructions](https://www.apollographql.com/docs/react/get-started) to install the required
 packages.
 
-
 <Tabs>
 <TabItem value="client.ts" label="client.ts" default>
 
 ```ts title="src/client.ts"
-import {
-    ApolloClient,
-    ApolloLink,
-    HttpLink,
-    InMemoryCache,
-} from '@apollo/client';
+import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const API_URL = `https://demo.vendure.io/shop-api`;
@@ -385,7 +374,7 @@ const httpLink = new HttpLink({
 // This part is used to check for and store the session token
 // if it is returned by the server.
 const afterwareLink = new ApolloLink((operation, forward) => {
-    return forward(operation).map((response) => {
+    return forward(operation).map(response => {
         const context = operation.getContext();
         const authHeader = context.response.headers.get('vendure-auth-token');
         if (authHeader) {
@@ -495,10 +484,9 @@ export default function App() {
 </TabItem>
 </Tabs>
 
-
 Here's a live version of this example:
 
-<Stackblitz id='vendure-docs-apollo-client' />
+<Stackblitz id="vendure-docs-apollo-client" />
 
 ### TanStack Query
 
@@ -528,7 +516,7 @@ const AUTH_TOKEN_KEY = 'auth_token';
 const API_URL = 'http://localhost:3000/shop-api';
 
 // If we have a session token, add it to the outgoing request
-const requestMiddleware: RequestMiddleware = async (request) => {
+const requestMiddleware: RequestMiddleware = async request => {
     const authToken = localStorage.getItem(AUTH_TOKEN_KEY);
     return {
         ...request,
@@ -540,7 +528,7 @@ const requestMiddleware: RequestMiddleware = async (request) => {
 };
 
 // Check all responses for a new session token
-const responseMiddleware: ResponseMiddleware = (response) => {
+const responseMiddleware: ResponseMiddleware = response => {
     if (!(response instanceof Error) && !response.errors) {
         const authHeader = response.headers.get('vendure-auth-token');
         if (authHeader) {
@@ -585,7 +573,7 @@ export function setChannelToken(channelToken: string | undefined) {
  */
 export function request<T, V extends Variables = Variables>(
     document: RequestDocument | TypedDocumentNode<T, V>,
-    variables: Record<string, any> = {}
+    variables: Record<string, any> = {},
 ) {
     return client.request(document, variables);
 }
@@ -642,7 +630,6 @@ export default function App() {
 
 </TabItem>
 
-
 <TabItem value="index.tsx" label="index.tsx" default>
 
 ```ts title="src/index.tsx"
@@ -673,5 +660,4 @@ root.render(
 
 Here's a live version of this example:
 
-<Stackblitz id='vendure-docs-tanstack-query' />
-
+<Stackblitz id="vendure-docs-tanstack-query" />

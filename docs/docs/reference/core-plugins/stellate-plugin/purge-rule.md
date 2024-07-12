@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## PurgeRule
 
-<GenerationInfo sourceFile="packages/stellate-plugin/src/purge-rule.ts" sourceLine="49" packageName="@vendure/stellate-plugin" />
+<GenerationInfo sourceFile="packages/stellate-plugin/src/purge-rule.ts" sourceLine="49" packageName="@bb-vendure/stellate-plugin" />
 
 Defines a rule that listens for a particular VendureEvent and uses that to
 make calls to the [Stellate Purging API](https://docs.stellate.co/docs/purging-api) via
@@ -55,7 +55,7 @@ class PurgeRule<Event extends VendureEvent = VendureEvent> {
 
 ## PurgeRuleConfig
 
-<GenerationInfo sourceFile="packages/stellate-plugin/src/purge-rule.ts" sourceLine="13" packageName="@vendure/stellate-plugin" />
+<GenerationInfo sourceFile="packages/stellate-plugin/src/purge-rule.ts" sourceLine="13" packageName="@bb-vendure/stellate-plugin" />
 
 Configures a <a href='/reference/core-plugins/stellate-plugin/purge-rule#purgerule'>PurgeRule</a>.
 
