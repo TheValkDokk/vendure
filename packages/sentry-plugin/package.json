@@ -1,6 +1,6 @@
 {
     "name": "@vendure/sentry-plugin",
-    "version": "2.2.7-bb",
+    "version": "2.2.7-bb.0",
     "license": "MIT",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -22,8 +22,8 @@
     },
     "devDependencies": {
         "@sentry/node": "^7.106.1",
-        "@vendure/common": "^2.2.7-bb",
-        "@vendure/core": "^2.2.7-bb"
+        "@vendure/common": "^2.2.7-bb.0",
+        "@vendure/core": "^2.2.7-bb.0"
     },
     "gitHead": "43a6aa9538de94adf4a8e8c927b20b5630a39a8b"
 }

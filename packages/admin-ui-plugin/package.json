@@ -1,6 +1,6 @@
 {
     "name": "@vendure/admin-ui-plugin",
-    "version": "2.2.7-bb",
+    "version": "2.2.7-bb.0",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
@@ -21,9 +21,9 @@
     "devDependencies": {
         "@types/express": "^4.17.21",
         "@types/fs-extra": "^11.0.4",
-        "@vendure/admin-ui": "^2.2.7-bb",
-        "@vendure/common": "^2.2.7-bb",
-        "@vendure/core": "^2.2.7-bb",
+        "@vendure/admin-ui": "^2.2.7-bb.0",
+        "@vendure/common": "^2.2.7-bb.0",
+        "@vendure/core": "^2.2.7-bb.0",
         "express": "^4.18.3",
         "rimraf": "^5.0.5",
         "typescript": "5.4.2"
