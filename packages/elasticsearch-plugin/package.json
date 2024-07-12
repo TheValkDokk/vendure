@@ -1,6 +1,6 @@
 {
     "name": "@bb-vendure/elasticsearch-plugin",
-    "version": "2.2.7-bb.1",
+    "version": "2.2.7-bb.2",
     "license": "MIT",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -26,10 +26,10 @@
         "fast-deep-equal": "^3.1.3"
     },
     "devDependencies": {
-        "@bb-vendure/common": "^2.2.7-bb.1",
-        "@bb-vendure/core": "^2.2.7-bb.1",
+        "@bb-vendure/common": "^2.2.7-bb.2",
+        "@bb-vendure/core": "^2.2.7-bb.2",
         "rimraf": "^5.0.5",
         "typescript": "5.3.3"
     },
-    "gitHead": "c518144fb373e8397b0efd046106c2d765fd964e"
+    "gitHead": "441e0e39bd726d4721032ab3c64d21dac0dabb28"
 }

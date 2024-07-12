@@ -1,6 +1,6 @@
 {
     "name": "@bb-vendure/cli",
-    "version": "2.2.7-bb.1",
+    "version": "2.2.7-bb.2",
     "description": "A modern, headless ecommerce framework",
     "repository": {
         "type": "git",
@@ -34,7 +34,7 @@
         "dist/**/*"
     ],
     "dependencies": {
-        "@bb-vendure/common": "^2.2.7-bb.1",
+        "@bb-vendure/common": "^2.2.7-bb.2",
         "@clack/prompts": "^0.7.0",
         "change-case": "^4.1.2",
         "commander": "^11.0.0",
@@ -46,8 +46,8 @@
         "tsconfig-paths": "^4.2.0"
     },
     "devDependencies": {
-        "@bb-vendure/core": "^2.2.7-bb.1",
+        "@bb-vendure/core": "^2.2.7-bb.2",
         "typescript": "5.3.3"
     },
-    "gitHead": "c518144fb373e8397b0efd046106c2d765fd964e"
+    "gitHead": "441e0e39bd726d4721032ab3c64d21dac0dabb28"
 }

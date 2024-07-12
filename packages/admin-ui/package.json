@@ -1,6 +1,6 @@
 {
     "name": "@bb-vendure/admin-ui",
-    "version": "2.2.7-bb.1",
+    "version": "2.2.7-bb.2",
     "license": "MIT",
     "scripts": {
         "ng": "ng",
@@ -39,7 +39,7 @@
         "@angular/platform-browser-dynamic": "^17.2.4",
         "@angular/router": "^17.2.4",
         "@apollo/client": "^3.9.6",
-        "@bb-vendure/common": "^2.2.7-bb.1",
+        "@bb-vendure/common": "^2.2.7-bb.2",
         "@biesbjerg/ngx-translate-extract-marker": "^1.0.0",
         "@cds/core": "^6.9.2",
         "@clr/angular": "^17.0.1",
@@ -114,5 +114,5 @@
         "rimraf": "^5.0.5",
         "typescript": "5.3.3"
     },
-    "gitHead": "c518144fb373e8397b0efd046106c2d765fd964e"
+    "gitHead": "441e0e39bd726d4721032ab3c64d21dac0dabb28"
 }
