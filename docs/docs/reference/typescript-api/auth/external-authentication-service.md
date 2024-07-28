@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## ExternalAuthenticationService
 
-<GenerationInfo sourceFile="packages/core/src/service/helpers/external-authentication/external-authentication.service.ts" sourceLine="24" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/service/helpers/external-authentication/external-authentication.service.ts" sourceLine="24" packageName="@bb-vendure/core" />
 
 This is a helper service which exposes methods related to looking up and creating Users based on an
 external <a href='/reference/typescript-api/auth/authentication-strategy#authenticationstrategy'>AuthenticationStrategy</a>.

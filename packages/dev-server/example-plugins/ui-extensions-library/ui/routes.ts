@@ -1,5 +1,5 @@
-import { CanDeactivateDetailGuard, registerRouteComponent } from '@vendure/admin-ui/core';
-import { registerReactRouteComponent } from '@vendure/admin-ui/react';
+import { CanDeactivateDetailGuard, registerRouteComponent } from '@bb-vendure/admin-ui/core';
+import { registerReactRouteComponent } from '@bb-vendure/admin-ui/react';
 
 import { AngularUiComponent } from './angular-components/angular-ui/angular-ui.component';
 import { ReactUi } from './react-components/ReactUi';

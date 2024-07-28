@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## DefaultFormConfigHash
 
-<GenerationInfo sourceFile="packages/common/src/shared-types.ts" sourceLine="160" packageName="@vendure/common" />
+<GenerationInfo sourceFile="packages/common/src/shared-types.ts" sourceLine="160" packageName="@bb-vendure/common" />
 
 Used to define the expected arguments for a given default form input component.
 

@@ -1,6 +1,6 @@
 {
-    "name": "@vendure/job-queue-plugin",
-    "version": "2.2.7",
+    "name": "@bb-vendure/job-queue-plugin",
+    "version": "2.2.7-bb.3",
     "license": "MIT",
     "main": "package/index.js",
     "types": "package/index.d.ts",
@@ -22,12 +22,13 @@
         "access": "public"
     },
     "devDependencies": {
+        "@bb-vendure/common": "^2.2.7-bb.3",
+        "@bb-vendure/core": "^2.2.7-bb.3",
         "@google-cloud/pubsub": "^2.8.0",
-        "@vendure/common": "^2.2.7",
-        "@vendure/core": "^2.2.7",
         "bullmq": "^5.4.2",
         "ioredis": "^5.3.2",
         "rimraf": "^5.0.5",
         "typescript": "5.3.3"
-    }
+    },
+    "gitHead": "d87d0f35c2f6e2effe09ef8f666db9cce47768ad"
 }

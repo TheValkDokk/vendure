@@ -1,6 +1,6 @@
 {
-    "name": "@vendure/core",
-    "version": "2.2.7",
+    "name": "@bb-vendure/core",
+    "version": "2.2.7-bb.3",
     "description": "A modern, headless ecommerce framework",
     "repository": {
         "type": "git",
@@ -41,6 +41,7 @@
     ],
     "dependencies": {
         "@apollo/server": "^4.10.1",
+        "@bb-vendure/common": "^2.2.7-bb.3",
         "@graphql-tools/stitch": "^9.0.5",
         "@nestjs/apollo": "^12.1.0",
         "@nestjs/common": "10.3.3",
@@ -51,7 +52,6 @@
         "@nestjs/testing": "10.3.3",
         "@nestjs/typeorm": "10.0.2",
         "@types/fs-extra": "^9.0.1",
-        "@vendure/common": "^2.2.7",
         "bcrypt": "^5.1.1",
         "body-parser": "^1.20.2",
         "cookie-session": "^2.1.0",
@@ -103,5 +103,6 @@
         "sql.js": "1.10.2",
         "sqlite3": "^5.1.7",
         "typescript": "5.3.3"
-    }
+    },
+    "gitHead": "d87d0f35c2f6e2effe09ef8f666db9cce47768ad"
 }

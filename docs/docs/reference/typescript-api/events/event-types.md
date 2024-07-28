@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## AccountRegistrationEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/account-registration-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/account-registration-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired when a new user registers an account, either as a stand-alone signup or after
 placing an order.
@@ -39,7 +39,7 @@ class AccountRegistrationEvent extends VendureEvent {
 
 ## AccountVerifiedEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/account-verified-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/account-verified-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired when a users email address successfully gets verified after
 the `verifyCustomerAccount` mutation was executed.
@@ -67,7 +67,7 @@ class AccountVerifiedEvent extends VendureEvent {
 
 ## AdministratorEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/administrator-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/administrator-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/administrator#administrator'>Administrator</a> is added, updated or deleted.
 
@@ -94,7 +94,7 @@ class AdministratorEvent extends VendureEntityEvent<Administrator, Administrator
 
 ## AssetChannelEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/asset-channel-event.ts" sourceLine="15" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/asset-channel-event.ts" sourceLine="15" packageName="@bb-vendure/core" />
 
 This event is fired whenever an <a href='/reference/typescript-api/entities/asset#asset'>Asset</a> is assigned or removed
 From a channel.
@@ -122,7 +122,7 @@ class AssetChannelEvent extends VendureEvent {
 
 ## AssetEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/asset-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/asset-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/asset#asset'>Asset</a> is added, updated or deleted.
 
@@ -155,7 +155,7 @@ class AssetEvent extends VendureEntityEvent<Asset, AssetInputTypes> {
 
 ## AttemptedLoginEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/attempted-login-event.ts" sourceLine="14" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/attempted-login-event.ts" sourceLine="14" packageName="@bb-vendure/core" />
 
 This event is fired when an attempt is made to log in via the shop or admin API `login` mutation.
 The `strategy` represents the name of the AuthenticationStrategy used in the login attempt.
@@ -184,7 +184,7 @@ class AttemptedLoginEvent extends VendureEvent {
 
 ## ChangeChannelEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/change-channel-event.ts" sourceLine="17" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/change-channel-event.ts" sourceLine="17" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever an <a href='/reference/typescript-api/entities/interfaces#channelaware'>ChannelAware</a> entity is assigned or removed
 from a channel. The entity property contains the value before updating the channels.
@@ -212,7 +212,7 @@ class ChangeChannelEvent<T extends ChannelAware & VendureEntity> extends Vendure
 
 ## ChannelEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/channel-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/channel-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/channel#channel'>Channel</a> is added, updated or deleted.
 
@@ -239,7 +239,7 @@ class ChannelEvent extends VendureEntityEvent<Channel, ChannelInputTypes> {
 
 ## CollectionEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/collection-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/collection-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/collection#collection'>Collection</a> is added, updated or deleted.
 
@@ -266,7 +266,7 @@ class CollectionEvent extends VendureEntityEvent<Collection, CollectionInputType
 
 ## CollectionModificationEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/collection-modification-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/collection-modification-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a Collection is modified in some way. The `productVariantIds`
 argument is an array of ids of all ProductVariants which:
@@ -297,7 +297,7 @@ class CollectionModificationEvent extends VendureEvent {
 
 ## CountryEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/country-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/country-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/country#country'>Country</a> is added, updated or deleted.
 
@@ -324,7 +324,7 @@ class CountryEvent extends VendureEntityEvent<Country, CountryInputTypes> {
 
 ## CouponCodeEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/coupon-code-event.ts" sourceLine="15" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/coupon-code-event.ts" sourceLine="15" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever an coupon code of an active <a href='/reference/typescript-api/entities/promotion#promotion'>Promotion</a>
 is assigned or removed to an <a href='/reference/typescript-api/entities/order#order'>Order</a>.
@@ -352,7 +352,7 @@ class CouponCodeEvent extends VendureEvent {
 
 ## CustomerAddressEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-address-event.ts" sourceLine="22" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-address-event.ts" sourceLine="22" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/address#address'>Address</a> is added, updated
 or deleted.
@@ -386,7 +386,7 @@ class CustomerAddressEvent extends VendureEntityEvent<Address, CustomerAddressIn
 
 ## CustomerEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-event.ts" sourceLine="22" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-event.ts" sourceLine="22" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/customer#customer'>Customer</a> is added, updated
 or deleted.
@@ -420,7 +420,7 @@ class CustomerEvent extends VendureEntityEvent<Customer, CustomerInputTypes> {
 
 ## CustomerGroupChangeEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-group-change-event.ts" sourceLine="15" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-group-change-event.ts" sourceLine="15" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever one or more <a href='/reference/typescript-api/entities/customer#customer'>Customer</a> is assigned to or removed from a
 <a href='/reference/typescript-api/entities/customer-group#customergroup'>CustomerGroup</a>.
@@ -448,7 +448,7 @@ class CustomerGroupChangeEvent extends VendureEvent {
 
 ## CustomerGroupEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-group-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/customer-group-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/customer-group#customergroup'>CustomerGroup</a> is added, updated or deleted.
 
@@ -475,7 +475,7 @@ class CustomerGroupEvent extends VendureEntityEvent<CustomerGroup, CustomerGroup
 
 ## FacetEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/facet-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/facet-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/facet#facet'>Facet</a> is added, updated or deleted.
 
@@ -502,7 +502,7 @@ class FacetEvent extends VendureEntityEvent<Facet, FacetInputTypes> {
 
 ## FacetValueEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/facet-value-event.ts" sourceLine="26" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/facet-value-event.ts" sourceLine="26" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/facet-value#facetvalue'>FacetValue</a> is added, updated or deleted.
 
@@ -529,7 +529,7 @@ class FacetValueEvent extends VendureEntityEvent<FacetValue, FacetValueInputType
 
 ## FulfillmentEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/fulfillment-event.ts" sourceLine="27" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/fulfillment-event.ts" sourceLine="27" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/fulfillment#fulfillment'>Fulfillment</a> is added. The type is always `created`.
 
@@ -556,7 +556,7 @@ class FulfillmentEvent extends VendureEntityEvent<Fulfillment, CreateFulfillment
 
 ## FulfillmentStateTransitionEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/fulfillment-state-transition-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/fulfillment-state-transition-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired whenever an <a href='/reference/typescript-api/entities/fulfillment#fulfillment'>Fulfillment</a> transitions from one <a href='/reference/typescript-api/fulfillment/fulfillment-state#fulfillmentstate'>FulfillmentState</a> to another.
 
@@ -583,7 +583,7 @@ class FulfillmentStateTransitionEvent extends VendureEvent {
 
 ## GlobalSettingsEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/global-settings-event.ts" sourceLine="16" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/global-settings-event.ts" sourceLine="16" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/global-settings#globalsettings'>GlobalSettings</a> is added. The type is always `updated`, because it's
 only created once and never deleted.
@@ -611,7 +611,7 @@ class GlobalSettingsEvent extends VendureEntityEvent<GlobalSettings, UpdateGloba
 
 ## HistoryEntryEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/history-entry-event.ts" sourceLine="23" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/history-entry-event.ts" sourceLine="23" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever one <a href='/reference/typescript-api/entities/history-entry#historyentry'>HistoryEntry</a> is added, updated or deleted.
 
@@ -644,7 +644,7 @@ class HistoryEntryEvent extends VendureEntityEvent<HistoryEntry, HistoryInput> {
 
 ## IdentifierChangeEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/identifier-change-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/identifier-change-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired when a registered user successfully changes the identifier (ie email address)
 associated with their account.
@@ -672,7 +672,7 @@ class IdentifierChangeEvent extends VendureEvent {
 
 ## IdentifierChangeRequestEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/identifier-change-request-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/identifier-change-request-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired when a registered user requests to update the identifier (ie email address)
 associated with the account.
@@ -700,7 +700,7 @@ class IdentifierChangeRequestEvent extends VendureEvent {
 
 ## InitializerEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/initializer-event.ts" sourceLine="11" packageName="@vendure/core" since="1.7.0" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/initializer-event.ts" sourceLine="11" packageName="@bb-vendure/core" since="1.7.0" />
 
 This event is fired when vendure finished initializing its services inside the <a href='/reference/typescript-api/services/initializer-service#initializerservice'>InitializerService</a>
 
@@ -727,7 +727,7 @@ class InitializerEvent extends VendureEvent {
 
 ## LoginEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/login-event.ts" sourceLine="12" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/login-event.ts" sourceLine="12" packageName="@bb-vendure/core" />
 
 This event is fired when a user successfully logs in via the shop or admin API `login` mutation.
 
@@ -754,7 +754,7 @@ class LoginEvent extends VendureEvent {
 
 ## LogoutEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/logout-event.ts" sourceLine="12" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/logout-event.ts" sourceLine="12" packageName="@bb-vendure/core" />
 
 This event is fired when a user logs out via the shop or admin API `logout` mutation.
 
@@ -781,7 +781,7 @@ class LogoutEvent extends VendureEvent {
 
 ## OrderEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired whenever an <a href='/reference/typescript-api/entities/order#order'>Order</a> is added, updated
 or deleted.
@@ -809,7 +809,7 @@ class OrderEvent extends VendureEvent {
 
 ## OrderLineEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-line-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-line-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired whenever an <a href='/reference/typescript-api/entities/order-line#orderline'>OrderLine</a> is added, updated
 or deleted.
@@ -837,7 +837,7 @@ class OrderLineEvent extends VendureEvent {
 
 ## OrderPlacedEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-placed-event.ts" sourceLine="17" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-placed-event.ts" sourceLine="17" packageName="@bb-vendure/core" />
 
 This event is fired whenever an <a href='/reference/typescript-api/entities/order#order'>Order</a> is set as "placed", which by default is
 when it transitions from 'ArrangingPayment' to either 'PaymentAuthorized' or 'PaymentSettled'.
@@ -868,7 +868,7 @@ class OrderPlacedEvent extends VendureEvent {
 
 ## OrderStateTransitionEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-state-transition-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/order-state-transition-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired whenever an <a href='/reference/typescript-api/entities/order#order'>Order</a> transitions from one <a href='/reference/typescript-api/orders/order-process#orderstate'>OrderState</a> to another.
 
@@ -895,7 +895,7 @@ class OrderStateTransitionEvent extends VendureEvent {
 
 ## PasswordResetEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/password-reset-event.ts" sourceLine="12" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/password-reset-event.ts" sourceLine="12" packageName="@bb-vendure/core" />
 
 This event is fired when a Customer requests a password reset email.
 
@@ -922,7 +922,7 @@ class PasswordResetEvent extends VendureEvent {
 
 ## PasswordResetVerifiedEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/password-reset-verified-event.ts" sourceLine="13" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/password-reset-verified-event.ts" sourceLine="13" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired when a password reset is executed with a verified token.
 
@@ -949,7 +949,7 @@ class PasswordResetVerifiedEvent extends VendureEvent {
 
 ## PaymentMethodEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/payment-method-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/payment-method-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/payment-method#paymentmethod'>PaymentMethod</a> is added, updated
 or deleted.
@@ -977,7 +977,7 @@ class PaymentMethodEvent extends VendureEntityEvent<PaymentMethod, PaymentMethod
 
 ## PaymentStateTransitionEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/payment-state-transition-event.ts" sourceLine="15" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/payment-state-transition-event.ts" sourceLine="15" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/payment#payment'>Payment</a> transitions from one <a href='/reference/typescript-api/payment/payment-state#paymentstate'>PaymentState</a> to another, e.g.
 a Payment is authorized by the payment provider.
@@ -1005,7 +1005,7 @@ class PaymentStateTransitionEvent extends VendureEvent {
 
 ## ProductChannelEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-channel-event.ts" sourceLine="15" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-channel-event.ts" sourceLine="15" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product#product'>Product</a> is added, updated
 or deleted.
@@ -1033,7 +1033,7 @@ class ProductChannelEvent extends VendureEvent {
 
 ## ProductEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product#product'>Product</a> is added, updated
 or deleted.
@@ -1067,7 +1067,7 @@ class ProductEvent extends VendureEntityEvent<Product, ProductInputTypes> {
 
 ## ProductOptionEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-option-event.ts" sourceLine="26" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-option-event.ts" sourceLine="26" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product-option#productoption'>ProductOption</a> is added or updated.
 
@@ -1094,7 +1094,7 @@ class ProductOptionEvent extends VendureEntityEvent<ProductOption, ProductOption
 
 ## ProductOptionGroupChangeEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-option-group-change-event.ts" sourceLine="15" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-option-group-change-event.ts" sourceLine="15" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product-option-group#productoptiongroup'>ProductOptionGroup</a> is assigned or removed from a <a href='/reference/typescript-api/entities/product#product'>Product</a>.
 
@@ -1121,7 +1121,7 @@ class ProductOptionGroupChangeEvent extends VendureEvent {
 
 ## ProductOptionGroupEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-option-group-event.ts" sourceLine="24" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-option-group-event.ts" sourceLine="24" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product-option-group#productoptiongroup'>ProductOptionGroup</a> is added or updated.
 
@@ -1151,7 +1151,7 @@ class ProductOptionGroupEvent extends VendureEntityEvent<
 
 ## ProductVariantChannelEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-variant-channel-event.ts" sourceLine="14" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-variant-channel-event.ts" sourceLine="14" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product-variant#productvariant'>ProductVariant</a> is assigned or removed from a <a href='/reference/typescript-api/entities/channel#channel'>Channel</a>.
 
@@ -1178,7 +1178,7 @@ class ProductVariantChannelEvent extends VendureEvent {
 
 ## ProductVariantEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-variant-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-variant-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product-variant#productvariant'>ProductVariant</a> is added, updated
 or deleted.
@@ -1212,7 +1212,7 @@ class ProductVariantEvent extends VendureEntityEvent<ProductVariant[], ProductVa
 
 ## ProductVariantPriceEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-variant-price-event.ts" sourceLine="17" packageName="@vendure/core" since="2.2.0" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/product-variant-price-event.ts" sourceLine="17" packageName="@bb-vendure/core" since="2.2.0" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/product-variant-price#productvariantprice'>ProductVariantPrice</a> is added, updated or deleted.
 
@@ -1242,7 +1242,7 @@ class ProductVariantPriceEvent extends VendureEntityEvent<
 
 ## PromotionEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/promotion-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/promotion-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/promotion#promotion'>Promotion</a> is added, updated
 or deleted.
@@ -1270,7 +1270,7 @@ class PromotionEvent extends VendureEntityEvent<Promotion, PromotionInputTypes> 
 
 ## ProvinceEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/province-event.ts" sourceLine="18" packageName="@vendure/core" since="2.0" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/province-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="2.0" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/province#province'>Province</a> is added, updated or deleted.
 
@@ -1297,7 +1297,7 @@ class ProvinceEvent extends VendureEntityEvent<Province, ProvinceInputTypes> {
 
 ## RefundStateTransitionEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/refund-state-transition-event.ts" sourceLine="14" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/refund-state-transition-event.ts" sourceLine="14" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/refund#refund'>Refund</a> transitions from one <a href='/reference/typescript-api/payment/refund-state#refundstate'>RefundState</a> to another.
 
@@ -1324,7 +1324,7 @@ class RefundStateTransitionEvent extends VendureEvent {
 
 ## RoleChangeEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/role-change-event.ts" sourceLine="16" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/role-change-event.ts" sourceLine="16" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever one <a href='/reference/typescript-api/entities/role#role'>Role</a> is assigned or removed from a user.
 The property `roleIds` only contains the removed or assigned role ids.
@@ -1352,7 +1352,7 @@ class RoleChangeEvent extends VendureEvent {
 
 ## RoleEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/role-event.ts" sourceLine="18" packageName="@vendure/core" since="1.4" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/role-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.4" />
 
 This event is fired whenever one <a href='/reference/typescript-api/entities/role#role'>Role</a> is added, updated or deleted.
 
@@ -1379,7 +1379,7 @@ class RoleEvent extends VendureEntityEvent<Role, RoleInputTypes> {
 
 ## SearchEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/search-event.ts" sourceLine="18" packageName="@vendure/core" since="1.6.0" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/search-event.ts" sourceLine="18" packageName="@bb-vendure/core" since="1.6.0" />
 
 This event is fired whenever a search query is executed.
 
@@ -1406,7 +1406,7 @@ class SearchEvent extends VendureEvent {
 
 ## SellerEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/seller-event.ts" sourceLine="19" packageName="@vendure/core" since="2.0.1" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/seller-event.ts" sourceLine="19" packageName="@bb-vendure/core" since="2.0.1" />
 
 This event is fired whenever one <a href='/reference/typescript-api/entities/seller#seller'>Seller</a> is added, updated or deleted.
 
@@ -1433,7 +1433,7 @@ class SellerEvent extends VendureEntityEvent<Seller, SellerInputTypes> {
 
 ## ShippingMethodEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/shipping-method-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/shipping-method-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/shipping-method#shippingmethod'>ShippingMethod</a> is added, updated
 or deleted.
@@ -1461,7 +1461,7 @@ class ShippingMethodEvent extends VendureEntityEvent<ShippingMethod, ShippingMet
 
 ## StockMovementEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/stock-movement-event.ts" sourceLine="16" packageName="@vendure/core" since="1.1.0" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/stock-movement-event.ts" sourceLine="16" packageName="@bb-vendure/core" since="1.1.0" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/stock-movement#stockmovement'>StockMovement</a> entity is created, which occurs when the saleable
 stock level of a ProductVariant is altered due to things like sales, manual adjustments, and cancellations.
@@ -1495,7 +1495,7 @@ class StockMovementEvent extends VendureEvent {
 
 ## TaxCategoryEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/tax-category-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/tax-category-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/tax-category#taxcategory'>TaxCategory</a> is added, updated
 or deleted.
@@ -1523,7 +1523,7 @@ class TaxCategoryEvent extends VendureEntityEvent<TaxCategory, TaxCategoryInputT
 
 ## TaxRateEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/tax-rate-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/tax-rate-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/tax-rate#taxrate'>TaxRate</a> is added, updated
 or deleted.
@@ -1551,7 +1551,7 @@ class TaxRateEvent extends VendureEntityEvent<TaxRate, TaxRateInputTypes> {
 
 ## TaxRateModificationEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/tax-rate-modification-event.ts" sourceLine="13" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/tax-rate-modification-event.ts" sourceLine="13" packageName="@bb-vendure/core" />
 
 This event is fired whenever a TaxRate is changed
 
@@ -1578,7 +1578,7 @@ class TaxRateModificationEvent extends VendureEvent {
 
 ## ZoneEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/zone-event.ts" sourceLine="18" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/zone-event.ts" sourceLine="18" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/zone#zone'>Zone</a> is added, updated
 or deleted.
@@ -1606,7 +1606,7 @@ class ZoneEvent extends VendureEntityEvent<Zone, ZoneInputTypes> {
 
 ## ZoneMembersEvent
 
-<GenerationInfo sourceFile="packages/core/src/event-bus/events/zone-members-event.ts" sourceLine="15" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/event-bus/events/zone-members-event.ts" sourceLine="15" packageName="@bb-vendure/core" />
 
 This event is fired whenever a <a href='/reference/typescript-api/entities/zone#zone'>Zone</a> gets <a href='/reference/typescript-api/entities/country#country'>Country</a> members assigned or removed
 The `entity` property contains the zone with the already updated member field.

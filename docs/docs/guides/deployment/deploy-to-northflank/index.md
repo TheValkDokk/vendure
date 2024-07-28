@@ -48,11 +48,11 @@ If you want to use the free plan, use the "Lite Template".
 ```json
 {
   "apiVersion": "v1",
-  "name": "Vendure Template",
+  "name": "bb-vendure Template",
   "description": "Vendure is a modern, open-source composable commerce platform",
   "project": {
     "spec": {
-      "name": "Vendure",
+      "name": "bb-vendure",
       "region": "europe-west",
       "description": "Vendure is a modern, open-source composable commerce platform",
       "color": "#57637A"
@@ -325,11 +325,11 @@ This setup is suitable for testing purposes, but is not recommended for producti
 ```json
 {
   "apiVersion": "v1",
-  "name": "Vendure Lite Template",
+  "name": "bb-vendure Lite Template",
   "description": "Vendure is a modern, open-source composable commerce platform",
   "project": {
     "spec": {
-      "name": "Vendure Lite",
+      "name": "bb-vendure Lite",
       "region": "europe-west",
       "description": "Vendure is a modern, open-source composable commerce platform",
       "color": "#17b9ff"

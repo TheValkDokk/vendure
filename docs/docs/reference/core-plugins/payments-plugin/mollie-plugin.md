@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## MolliePlugin
 
-<GenerationInfo sourceFile="packages/payments-plugin/src/mollie/mollie.plugin.ts" sourceLine="192" packageName="@vendure/payments-plugin" />
+<GenerationInfo sourceFile="packages/payments-plugin/src/mollie/mollie.plugin.ts" sourceLine="192" packageName="@bb-vendure/payments-plugin" />
 
 Plugin to enable payments through the [Mollie platform](https://docs.mollie.com/).
 This plugin uses the Order API from Mollie, not the Payments API.
@@ -21,17 +21,17 @@ This plugin uses the Order API from Mollie, not the Payments API.
 1. You will need to create a Mollie account and get your apiKey in the dashboard.
 2. Install the Payments plugin and the Mollie client:
 
-    `yarn add @vendure/payments-plugin @mollie/api-client`
+    `yarn add @bb-vendure/payments-plugin @mollie/api-client`
 
     or
 
-    `npm install @vendure/payments-plugin @mollie/api-client`
+    `npm install @bb-vendure/payments-plugin @mollie/api-client`
 
 ## Setup
 
 1. Add the plugin to your VendureConfig `plugins` array:
     ```ts
-    import { MolliePlugin } from '@vendure/payments-plugin/package/mollie';
+    import { MolliePlugin } from '@bb-vendure/payments-plugin/package/mollie';
 
     // ...
 
@@ -145,7 +145,7 @@ Initialize the mollie payment plugin
 
 ## MolliePluginOptions
 
-<GenerationInfo sourceFile="packages/payments-plugin/src/mollie/mollie.plugin.ts" sourceLine="29" packageName="@vendure/payments-plugin" />
+<GenerationInfo sourceFile="packages/payments-plugin/src/mollie/mollie.plugin.ts" sourceLine="29" packageName="@bb-vendure/payments-plugin" />
 
 Configuration options for the Mollie payments plugin.
 
@@ -183,8 +183,8 @@ before the order is created.
 *Example*
 
 ```ts
-import { VendureConfig } from '@vendure/core';
-import { MolliePlugin, getLocale } from '@vendure/payments-plugin/package/mollie';
+import { VendureConfig } from '@bb-vendure/core';
+import { MolliePlugin, getLocale } from '@bb-vendure/payments-plugin/package/mollie';
 
 export const config: VendureConfig = {
   // ...

@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## HardenPluginOptions
 
-<GenerationInfo sourceFile="packages/harden-plugin/src/types.ts" sourceLine="9" packageName="@vendure/harden-plugin" />
+<GenerationInfo sourceFile="packages/harden-plugin/src/types.ts" sourceLine="9" packageName="@bb-vendure/harden-plugin" />
 
 Options that can be passed to the `.init()` static method of the HardenPlugin.
 

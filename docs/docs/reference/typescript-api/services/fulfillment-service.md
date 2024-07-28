@@ -11,7 +11,7 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## FulfillmentService
 
-<GenerationInfo sourceFile="packages/core/src/service/services/fulfillment.service.ts" sourceLine="34" packageName="@vendure/core" />
+<GenerationInfo sourceFile="packages/core/src/service/services/fulfillment.service.ts" sourceLine="34" packageName="@bb-vendure/core" />
 
 Contains methods relating to <a href='/reference/typescript-api/entities/fulfillment#fulfillment'>Fulfillment</a> entities.
 

@@ -1,5 +1,5 @@
 ---
-title: "Email & Notifications"
+title: 'Email & Notifications'
 ---
 
 A typical ecommerce application needs to notify customers of certain events, such as when they place an order or
@@ -32,8 +32,12 @@ one of which is responsible for sending "order confirmation" emails.
 Let's take a closer look at a simplified version of the `orderConfirmationHandler`:
 
 ```ts
-import { OrderStateTransitionEvent } from '@vendure/core';
-import { EmailEventListener, transformOrderLineAssetUrls, hydrateShippingLines } from '@vendure/email-plugin';
+import { OrderStateTransitionEvent } from '@bb-vendure/core';
+import {
+    EmailEventListener,
+    transformOrderLineAssetUrls,
+    hydrateShippingLines,
+} from '@bb-vendure/email-plugin';
 
 // The 'order-confirmation' string is used by the EmailPlugin to identify
 // which template to use when rendering the email.
@@ -41,11 +45,7 @@ export const orderConfirmationHandler = new EmailEventListener('order-confirmati
     .on(OrderStateTransitionEvent)
     // Only send the email when the Order is transitioning to the
     // "PaymentSettled" state and the Order has a customer associated with it.
-    .filter(
-        event =>
-            event.toState === 'PaymentSettled'
-            && !!event.order.customer,
-    )
+    .filter(event => event.toState === 'PaymentSettled' && !!event.order.customer)
     // We commonly need to load some additional data to be able to render the email
     // template. This is done via the `loadData()` method. In this method we are
     // mutating the Order object to ensure that product images are correctly
@@ -66,14 +66,14 @@ export const orderConfirmationHandler = new EmailEventListener('order-confirmati
     .setSubject('Order confirmation for #{{ order.code }}')
     // The object returned here defines the variables which are
     // available to the email template.
-    .setTemplateVars(event => ({ order: event.order, shippingLines: event.data.shippingLines }))
+    .setTemplateVars(event => ({ order: event.order, shippingLines: event.data.shippingLines }));
 ```
 
 To recap:
 
-- The handler listens for a specific event
-- It optionally filters those events to determine whether an email should be sent
-- It specifies the details of the email to be sent, including the recipient, subject, template variables, etc.
+-   The handler listens for a specific event
+-   It optionally filters those events to determine whether an email should be sent
+-   It specifies the details of the email to be sent, including the recipient, subject, template variables, etc.
 
 The full range of methods available when setting up an EmailEventHandler can be found in the [EmailEventHandler API docs](/reference/core-plugins/email-plugin/email-event-handler).
 
@@ -84,8 +84,8 @@ Additionally, there are global variables which are made available to _all_ email
 defined in the `globalTemplateVars` property of the EmailPlugin config:
 
 ```ts title="src/vendure-config.ts"
-import { VendureConfig } from '@vendure/core';
-import { EmailPlugin } from '@vendure/email-plugin';
+import { VendureConfig } from '@bb-vendure/core';
+import { EmailPlugin } from '@bb-vendure/email-plugin';
 
 export const config: VendureConfig = {
     // ...
@@ -97,7 +97,7 @@ export const config: VendureConfig = {
                 fromAddress: '"MyShop" <noreply@myshop.com>',
                 verifyEmailAddressUrl: 'https://www.myshop.com/verify',
                 passwordResetUrl: 'https://www.myshop.com/password-reset',
-                changeEmailAddressUrl: 'https://www.myshop.com/verify-email-address-change'
+                changeEmailAddressUrl: 'https://www.myshop.com/verify-email-address-change',
             },
             // highlight-end
         }),
@@ -111,8 +111,8 @@ The EmailPlugin is designed to be flexible enough to work with many different em
 configuration uses Nodemailer to send emails via SMTP, but you can easily configure it to use a different
 transport. For instance:
 
-- [AWS SES](https://www.vendure.io/marketplace/aws-ses)
-- [SendGrid](https://www.vendure.io/marketplace/sendgrid)
+-   [AWS SES](https://www.vendure.io/marketplace/aws-ses)
+-   [SendGrid](https://www.vendure.io/marketplace/sendgrid)
 
 ## Other notification methods
 
@@ -126,8 +126,8 @@ This is just a simplified example to illustrate the pattern.
 
 ```ts title="src/plugins/sms-plugin/sms-plugin.ts"
 import { OnModuleInit } from '@nestjs/common';
-import { PluginCommonModule, VendurePlugin, EventBus } from '@vendure/core';
-import { OrderStateTransitionEvent } from '@vendure/core';
+import { PluginCommonModule, VendurePlugin, EventBus } from '@bb-vendure/core';
+import { OrderStateTransitionEvent } from '@bb-vendure/core';
 
 // A custom service which sends SMS messages
 // using a third-party SMS provider such as Twilio.

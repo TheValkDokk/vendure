@@ -1,6 +1,6 @@
 {
-    "name": "@vendure/harden-plugin",
-    "version": "2.2.7",
+    "name": "@bb-vendure/harden-plugin",
+    "version": "2.2.7-bb.3",
     "license": "MIT",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -21,7 +21,8 @@
         "graphql-query-complexity": "^0.12.0"
     },
     "devDependencies": {
-        "@vendure/common": "^2.2.7",
-        "@vendure/core": "^2.2.7"
-    }
+        "@bb-vendure/common": "^2.2.7-bb.3",
+        "@bb-vendure/core": "^2.2.7-bb.3"
+    },
+    "gitHead": "d87d0f35c2f6e2effe09ef8f666db9cce47768ad"
 }
