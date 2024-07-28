@@ -11,7 +11,11 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## SuperadminCredentials
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/core/src/config/vendure-config.ts" sourceLine="803" packageName="@bb-vendure/core" />
+=======
+<GenerationInfo sourceFile="packages/core/src/config/vendure-config.ts" sourceLine="804" packageName="@vendure/core" />
+>>>>>>> upstream/master
 
 These credentials will be used to create the Superadmin user & administrator
 when Vendure first bootstraps.
@@ -27,12 +31,12 @@ interface SuperadminCredentials {
 
 ### identifier
 
-<MemberInfo kind="property" type={`string`} default="'superadmin'"   />
+<MemberInfo kind="property" type={`string`} default={`'superadmin'`}   />
 
 The identifier to be used to create a superadmin account
 ### password
 
-<MemberInfo kind="property" type={`string`} default="'superadmin'"   />
+<MemberInfo kind="property" type={`string`} default={`'superadmin'`}   />
 
 The password to be used to create a superadmin account
 

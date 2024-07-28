@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
     "name": "@bb-vendure/payments-plugin",
     "version": "2.2.7-bb.3",
     "license": "MIT",
+=======
+    "name": "@vendure/payments-plugin",
+    "version": "3.0.0",
+    "license": "GPL-3.0-or-later",
+>>>>>>> upstream/master
     "main": "package/index.js",
     "types": "package/index.d.ts",
     "files": [
@@ -49,6 +55,12 @@
         "@mollie/api-client": "^3.7.0",
         "@types/braintree": "^3.3.11",
         "@types/localtunnel": "2.0.4",
+<<<<<<< HEAD
+=======
+        "@vendure/common": "^3.0.0",
+        "@vendure/core": "^3.0.0",
+        "@vendure/testing": "^3.0.0",
+>>>>>>> upstream/master
         "braintree": "^3.22.0",
         "localtunnel": "2.0.2",
         "nock": "^13.1.4",

@@ -11,7 +11,11 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## Permission
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/common/src/generated-types.ts" sourceLine="4330" packageName="@bb-vendure/common" />
+=======
+<GenerationInfo sourceFile="packages/common/src/generated-types.ts" sourceLine="4335" packageName="@vendure/common" />
+>>>>>>> upstream/master
 
 Permissions for administrators and customers. Used to control access to
 GraphQL resolvers via the <a href='/reference/typescript-api/request/allow-decorator#allow'>Allow</a> decorator.

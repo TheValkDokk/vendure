@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "@bb-vendure/ui-devkit",
     "version": "2.2.7-bb.3",
+=======
+    "name": "@vendure/ui-devkit",
+    "version": "3.0.0",
+>>>>>>> upstream/master
     "description": "A library for authoring Vendure Admin UI extensions",
     "keywords": [
         "vendure",
@@ -9,7 +14,7 @@
     ],
     "author": "Michael Bromley <michael@michaelbromley.co.uk>",
     "homepage": "https://www.vendure.io/",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "files": [
         "client",
         "compiler",
@@ -40,8 +45,13 @@
         "@angular/cli": "^17.2.3",
         "@angular/compiler": "^17.2.4",
         "@angular/compiler-cli": "^17.2.4",
+<<<<<<< HEAD
         "@bb-vendure/admin-ui": "^2.2.7-bb.3",
         "@bb-vendure/common": "^2.2.7-bb.3",
+=======
+        "@vendure/admin-ui": "^3.0.0",
+        "@vendure/common": "^3.0.0",
+>>>>>>> upstream/master
         "chalk": "^4.1.0",
         "chokidar": "^3.6.0",
         "fs-extra": "^11.2.0",
@@ -53,6 +63,10 @@
         "@rollup/plugin-node-resolve": "^15.2.3",
         "@rollup/plugin-terser": "^0.4.4",
         "@types/fs-extra": "^11.0.4",
+<<<<<<< HEAD
+=======
+        "@vendure/core": "^3.0.0",
+>>>>>>> upstream/master
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "rimraf": "^5.0.5",

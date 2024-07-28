@@ -15,13 +15,9 @@ export type Scalars = {
     Boolean: { input: boolean; output: boolean };
     Int: { input: number; output: number };
     Float: { input: number; output: number };
-    /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
     DateTime: { input: any; output: any };
-    /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
     JSON: { input: any; output: any };
-    /** The `Money` scalar type represents monetary values and supports signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point). */
     Money: { input: number; output: number };
-    /** The `Upload` scalar type represents a file upload. */
     Upload: { input: any; output: any };
 };
 
@@ -323,6 +319,12 @@ export type Coordinate = {
     y: Scalars['Float']['output'];
 };
 
+/**
+ * A Country of the world which your shop operates in.
+ *
+ * The `code` field is typically a 2-character ISO code such as "GB", "US", "DE" etc. This code is used in certain inputs such as
+ * `UpdateAddressInput` and `CreateAddressInput` to specify the country.
+ */
 export type Country = Node &
     Region & {
         __typename?: 'Country';
@@ -371,6 +373,13 @@ export type CouponCodeLimitError = ErrorResult & {
     message: Scalars['String']['output'];
 };
 
+/**
+ * Input used to create an Address.
+ *
+ * The countryCode must correspond to a `code` property of a Country that has been defined in the
+ * Vendure server. The `code` property is typically a 2-character ISO code such as "GB", "US", "DE" etc.
+ * If an invalid code is passed, the mutation will fail.
+ */
 export type CreateAddressInput = {
     city?: InputMaybe<Scalars['String']['input']>;
     company?: InputMaybe<Scalars['String']['input']>;
@@ -917,6 +926,7 @@ export enum ErrorCode {
     INSUFFICIENT_STOCK_ERROR = 'INSUFFICIENT_STOCK_ERROR',
     INVALID_CREDENTIALS_ERROR = 'INVALID_CREDENTIALS_ERROR',
     MISSING_PASSWORD_ERROR = 'MISSING_PASSWORD_ERROR',
+    MOLLIE_PAYMENT_INTENT_ERROR = 'MOLLIE_PAYMENT_INTENT_ERROR',
     NATIVE_AUTH_STRATEGY_ERROR = 'NATIVE_AUTH_STRATEGY_ERROR',
     NEGATIVE_QUANTITY_ERROR = 'NEGATIVE_QUANTITY_ERROR',
     NOT_VERIFIED_ERROR = 'NOT_VERIFIED_ERROR',
@@ -1693,10 +1703,27 @@ export type MolliePaymentIntentError = ErrorResult & {
 };
 
 export type MolliePaymentIntentInput = {
+    /**
+     * Optional preselected Mollie payment method. When this is passed
+     * the payment selection step will be skipped.
+     */
     molliePaymentMethodCode?: InputMaybe<Scalars['String']['input']>;
+    /**
+     * Use this to create a payment intent for a specific order. This allows you to create intents for
+     * orders that are not active orders.
+     */
+    orderId?: InputMaybe<Scalars['String']['input']>;
+    /**
+     * The code of the Vendure payment method to use for the payment.
+     * Must have Mollie as payment method handler.
+     * Without this, the first method with Mollie as handler will be used.
+     */
     paymentMethodCode?: InputMaybe<Scalars['String']['input']>;
+    /**
+     * The redirect url to which the customer will be redirected after the payment is completed.
+     * The configured fallback redirect will be used if this is not provided.
+     */
     redirectUrl?: InputMaybe<Scalars['String']['input']>;
-    orderId?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export type MolliePaymentIntentResult = MolliePaymentIntent | MolliePaymentIntentError;
@@ -3353,6 +3380,13 @@ export type TextCustomFieldConfig = CustomField & {
 
 export type TransitionOrderToStateResult = Order | OrderStateTransitionError;
 
+/**
+ * Input used to update an Address.
+ *
+ * The countryCode must correspond to a `code` property of a Country that has been defined in the
+ * Vendure server. The `code` property is typically a 2-character ISO code such as "GB", "US", "DE" etc.
+ * If an invalid code is passed, the mutation will fail.
+ */
 export type UpdateAddressInput = {
     city?: InputMaybe<Scalars['String']['input']>;
     company?: InputMaybe<Scalars['String']['input']>;

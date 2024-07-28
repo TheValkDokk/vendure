@@ -11,7 +11,11 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## compileUiExtensions
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/ui-devkit/src/compiler/compile.ts" sourceLine="35" packageName="@bb-vendure/ui-devkit" />
+=======
+<GenerationInfo sourceFile="packages/ui-devkit/src/compiler/compile.ts" sourceLine="36" packageName="@vendure/ui-devkit" />
+>>>>>>> upstream/master
 
 Compiles the Admin UI app with the specified extensions.
 

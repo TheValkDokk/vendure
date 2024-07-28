@@ -11,7 +11,11 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## registerRouteComponent
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/admin-ui/src/lib/core/src/extension/register-route-component.ts" sourceLine="77" packageName="@bb-vendure/admin-ui" />
+=======
+<GenerationInfo sourceFile="packages/admin-ui/src/lib/core/src/extension/register-route-component.ts" sourceLine="79" packageName="@vendure/admin-ui" />
+>>>>>>> upstream/master
 
 Registers an Angular standalone component to be rendered in a route.
 

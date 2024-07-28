@@ -11,13 +11,17 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## RoleService
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/core/src/service/services/role.service.ts" sourceLine="51" packageName="@bb-vendure/core" />
+=======
+<GenerationInfo sourceFile="packages/core/src/service/services/role.service.ts" sourceLine="52" packageName="@vendure/core" />
+>>>>>>> upstream/master
 
 Contains methods relating to <a href='/reference/typescript-api/entities/role#role'>Role</a> entities.
 
 ```ts title="Signature"
 class RoleService {
-    constructor(connection: TransactionalConnection, channelService: ChannelService, listQueryBuilder: ListQueryBuilder, configService: ConfigService, eventBus: EventBus)
+    constructor(connection: TransactionalConnection, channelService: ChannelService, listQueryBuilder: ListQueryBuilder, configService: ConfigService, eventBus: EventBus, requestContextCache: RequestContextCacheService)
     initRoles() => ;
     findAll(ctx: RequestContext, options?: ListQueryOptions<Role>, relations?: RelationPaths<Role>) => Promise<PaginatedList<Role>>;
     findOne(ctx: RequestContext, roleId: ID, relations?: RelationPaths<Role>) => Promise<Role | undefined>;
@@ -39,7 +43,7 @@ class RoleService {
 
 ### constructor
 
-<MemberInfo kind="method" type={`(connection: <a href='/reference/typescript-api/data-access/transactional-connection#transactionalconnection'>TransactionalConnection</a>, channelService: <a href='/reference/typescript-api/services/channel-service#channelservice'>ChannelService</a>, listQueryBuilder: <a href='/reference/typescript-api/data-access/list-query-builder#listquerybuilder'>ListQueryBuilder</a>, configService: ConfigService, eventBus: <a href='/reference/typescript-api/events/event-bus#eventbus'>EventBus</a>) => RoleService`}   />
+<MemberInfo kind="method" type={`(connection: <a href='/reference/typescript-api/data-access/transactional-connection#transactionalconnection'>TransactionalConnection</a>, channelService: <a href='/reference/typescript-api/services/channel-service#channelservice'>ChannelService</a>, listQueryBuilder: <a href='/reference/typescript-api/data-access/list-query-builder#listquerybuilder'>ListQueryBuilder</a>, configService: ConfigService, eventBus: <a href='/reference/typescript-api/events/event-bus#eventbus'>EventBus</a>, requestContextCache: RequestContextCacheService) => RoleService`}   />
 
 
 ### initRoles

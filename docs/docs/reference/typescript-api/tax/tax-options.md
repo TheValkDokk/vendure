@@ -11,7 +11,11 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## TaxOptions
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/core/src/config/vendure-config.ts" sourceLine="857" packageName="@bb-vendure/core" />
+=======
+<GenerationInfo sourceFile="packages/core/src/config/vendure-config.ts" sourceLine="866" packageName="@vendure/core" />
+>>>>>>> upstream/master
 
 
 
@@ -26,12 +30,12 @@ interface TaxOptions {
 
 ### taxZoneStrategy
 
-<MemberInfo kind="property" type={`<a href='/reference/typescript-api/tax/tax-zone-strategy#taxzonestrategy'>TaxZoneStrategy</a>`} default="<a href='/reference/typescript-api/tax/default-tax-zone-strategy#defaulttaxzonestrategy'>DefaultTaxZoneStrategy</a>"   />
+<MemberInfo kind="property" type={`<a href='/reference/typescript-api/tax/tax-zone-strategy#taxzonestrategy'>TaxZoneStrategy</a>`} default={`<a href='/reference/typescript-api/tax/default-tax-zone-strategy#defaulttaxzonestrategy'>DefaultTaxZoneStrategy</a>`}   />
 
 Defines the strategy used to determine the applicable Zone used in tax calculations.
 ### taxLineCalculationStrategy
 
-<MemberInfo kind="property" type={`<a href='/reference/typescript-api/tax/tax-line-calculation-strategy#taxlinecalculationstrategy'>TaxLineCalculationStrategy</a>`} default="<a href='/reference/typescript-api/tax/default-tax-line-calculation-strategy#defaulttaxlinecalculationstrategy'>DefaultTaxLineCalculationStrategy</a>"   />
+<MemberInfo kind="property" type={`<a href='/reference/typescript-api/tax/tax-line-calculation-strategy#taxlinecalculationstrategy'>TaxLineCalculationStrategy</a>`} default={`<a href='/reference/typescript-api/tax/default-tax-line-calculation-strategy#defaulttaxlinecalculationstrategy'>DefaultTaxLineCalculationStrategy</a>`}   />
 
 Defines the strategy used to calculate the TaxLines added to OrderItems.
 

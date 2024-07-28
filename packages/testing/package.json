@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "@bb-vendure/testing",
     "version": "2.2.7-bb.3",
+=======
+    "name": "@vendure/testing",
+    "version": "3.0.0",
+>>>>>>> upstream/master
     "description": "End-to-end testing tools for Vendure projects",
     "keywords": [
         "vendure",
@@ -9,7 +14,7 @@
     ],
     "author": "Michael Bromley <michael@michaelbromley.co.uk>",
     "homepage": "https://www.vendure.io/",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "directories": {
         "lib": "lib"
     },
@@ -38,9 +43,13 @@
     "dependencies": {
         "@bb-vendure/common": "^2.2.7-bb.3",
         "@graphql-typed-document-node/core": "^3.2.0",
+<<<<<<< HEAD
+=======
+        "@vendure/common": "^3.0.0",
+>>>>>>> upstream/master
         "faker": "^4.1.0",
         "form-data": "^4.0.0",
-        "graphql": "16.8.1",
+        "graphql": "~16.9.0",
         "graphql-tag": "^2.12.6",
         "node-fetch": "^2.7.0",
         "sql.js": "1.8.0"
@@ -51,6 +60,10 @@
         "@types/mysql": "^2.15.26",
         "@types/node-fetch": "^2.6.4",
         "@types/pg": "^8.11.2",
+<<<<<<< HEAD
+=======
+        "@vendure/core": "^3.0.0",
+>>>>>>> upstream/master
         "mysql": "^2.18.1",
         "pg": "^8.11.3",
         "rimraf": "^5.0.5",

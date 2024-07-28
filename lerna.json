@@ -1,6 +1,10 @@
 {
     "packages": ["packages/*"],
+<<<<<<< HEAD
     "version": "2.2.7-bb.3",
+=======
+    "version": "3.0.0",
+>>>>>>> upstream/master
     "npmClient": "npm",
     "command": {
         "version": {

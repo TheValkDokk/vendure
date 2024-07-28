@@ -3,8 +3,8 @@
 An open-source headless commerce platform built on [Node.js](https://nodejs.org) with [GraphQL](https://graphql.org/), [Nest](https://nestjs.com/) & [TypeScript](http://www.typescriptlang.org/), with a focus on developer productivity and ease of customization.
 
 [![Build Status](https://github.com/vendure-ecommerce/vendure/workflows/Build%20&%20Test/badge.svg)](https://github.com/vendure-ecommerce/vendure/actions) 
-![Publish & Install](https://github.com/vendure-ecommerce/vendure/workflows/Publish%20&%20Install/badge.svg)
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![Publish & Install](https://github.com/vendure-ecommerce/vendure/workflows/Publish%20&%20Install/badge.svg)](https://github.com/vendure-ecommerce/vendure/actions/workflows/publish_and_install.yml)
+[![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 ![vendure-github-social-banner](https://github.com/vendure-ecommerce/vendure/assets/24294584/ada25fa3-185d-45ce-896d-bece3685a829)
 
@@ -13,14 +13,14 @@ An open-source headless commerce platform built on [Node.js](https://nodejs.org)
 
 * [Getting Started](https://docs.vendure.io/guides/getting-started/installation/): Get Vendure up and running locally in a matter of minutes with a single command
 * [Live Demo](https://demo.vendure.io/)
-* [Vendure Discord](https://www.vendure.io/community) Join us on Discord for support and answers to your questions
+* [Vendure Discord](https://www.vendure.io/community): Join us on Discord for support and answers to your questions
 
 ## Branches
 
 - `master` - The latest stable release, currently the 2.x series.
 - `minor` - The next patch release, including new features
 - `major` - The next major release (v3.0)
-- `v1` - The 1.x series, which is no longer actively developed but may still receive critical fixes.
+- `v2.x` - The 2.x line, which will receive critical fixes until the end-of-life on 31.12.2024. The code in this branch is under the MIT license.
 
 ## Structure
 
@@ -30,7 +30,8 @@ This project is a monorepo managed with [Lerna](https://github.com/lerna/lerna).
 vendure/
 ├── docs/           # Documentation source
 ├── e2e-common/     # Shared config for package e2e tests
-├── packages/       # Source for the Vendure server, admin-ui & plugin packages
+├── license/        # License information & CLA signature log
+├── packages/       # Source for the Vendure server, admin-ui & core plugin packages
 ├── scripts/
     ├── changelog/  # Scripts used to generate the changelog based on the git history
     ├── codegen/    # Scripts used to generate TypeScript code from the GraphQL APIs
@@ -39,7 +40,9 @@ vendure/
 
 ## Development
 
-The following instructions are for those who want to develop the Vendure core framework or plugins (e.g. if you intend to make a pull request). For instructions on how to build a project *using* Vendure, please see the [Getting Started guide](https://www.vendure.io/docs/getting-started/).
+> [!IMPORTANT]
+> The following instructions are for those who want to develop the Vendure core framework or plugins (e.g. if you intend to make a pull request). For instructions on how to build a project *using* Vendure, please see the [Getting Started guide](https://docs.vendure.io/guides/getting-started/installation/).
+
 
 ### 1. Install top-level dependencies
 
@@ -147,17 +150,23 @@ The core and several other packages have unit tests which are can be run all tog
 
 Unit tests are co-located with the files which they test, and have the suffix `.spec.ts`.
 
+If you're getting `Error: Bindings not found.`, please run `npm rebuild @swc/core`.
+
 #### End-to-end Tests
 
 Certain packages have e2e tests, which are located at `/packages/<name>/e2e/`. All e2e tests can be run by running `npm run e2e` from the root directory, or individually by running it from the package directory.
 
+<<<<<<< HEAD
 e2e tests use the `@bb-vendure/testing` package. For details of how the setup works, see the [Testing docs](https://www.vendure.io/docs/developer-guide/testing/)
+=======
+e2e tests use the `@vendure/testing` package. For details of how the setup works, see the [Testing docs](https://docs.vendure.io/guides/developer-guide/testing/).
+>>>>>>> upstream/master
 
 When **debugging e2e tests**, set an environment variable `E2E_DEBUG=true` which will increase the global Jest timeout and allow you to step through the e2e tests without the tests automatically failing due to timeout.
 
 ### Release Process
 
-All packages in this repo are released at every version change (using [Lerna's fixed mode](https://github.com/lerna/lerna#fixedlocked-mode-default)). This simplifies both the development (tracking multiple disparate versions is tough) and also the developer experience for users of the framework (it is simple to see that all packages are up-to-date and compatible).
+All packages in this repo are released at every version change (using [Lerna's fixed mode](https://lerna.js.org/docs/features/version-and-publish#fixedlocked-mode-default)). This simplifies both the development (tracking multiple disparate versions is tough) and also the developer experience for users of the framework (it is simple to see that all packages are up-to-date and compatible).
 
 To make a release:
 
@@ -167,7 +176,7 @@ It will run `lerna publish` which will prompt for which version to update to. Al
 
 Next it will build all packages to ensure the distributed files are up to date.
 
-Finally the command will create changelog entries for this release.
+Finally, the command will create changelog entries for this release.
 
 ##### 2. `git push origin master --follow-tags`
 
@@ -175,4 +184,4 @@ The reason we do not rely on Lerna to push the release to Git is that this repo 
 
 ## License
 
-MIT
+See [LICENSE.md](./LICENSE.md).

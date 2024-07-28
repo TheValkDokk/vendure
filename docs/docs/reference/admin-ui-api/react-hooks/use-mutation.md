@@ -11,7 +11,11 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## useMutation
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/admin-ui/src/lib/react/src/react-hooks/use-query.ts" sourceLine="169" packageName="@bb-vendure/admin-ui" />
+=======
+<GenerationInfo sourceFile="packages/admin-ui/src/lib/react/src/react-hooks/use-query.ts" sourceLine="181" packageName="@vendure/admin-ui" />
+>>>>>>> upstream/master
 
 A React hook which allows you to execute a GraphQL mutation.
 

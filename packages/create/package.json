@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
     "name": "@bb-vendure/create",
     "version": "2.2.7-bb.3",
     "license": "MIT",
+=======
+    "name": "@vendure/create",
+    "version": "3.0.0",
+    "license": "GPL-3.0-or-later",
+>>>>>>> upstream/master
     "bin": {
         "create": "./index.js"
     },
@@ -29,6 +35,10 @@
         "@types/fs-extra": "^11.0.4",
         "@types/handlebars": "^4.1.0",
         "@types/semver": "^7.5.8",
+<<<<<<< HEAD
+=======
+        "@vendure/core": "^3.0.0",
+>>>>>>> upstream/master
         "rimraf": "^5.0.5",
         "ts-node": "^10.9.2",
         "typescript": "5.3.3"
@@ -36,6 +46,10 @@
     "dependencies": {
         "@bb-vendure/common": "^2.2.7-bb.3",
         "@clack/prompts": "^0.7.0",
+<<<<<<< HEAD
+=======
+        "@vendure/common": "^3.0.0",
+>>>>>>> upstream/master
         "commander": "^11.0.0",
         "cross-spawn": "^7.0.3",
         "detect-port": "^1.5.1",

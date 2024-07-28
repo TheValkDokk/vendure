@@ -1,8 +1,12 @@
 {
     "name": "dev-server",
+<<<<<<< HEAD
     "version": "2.2.7-bb.3",
+=======
+    "version": "3.0.0",
+>>>>>>> upstream/master
     "main": "index.js",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "private": true,
     "scripts": {
         "populate": "node -r ts-node/register -r dotenv/config populate-dev-server.ts",
@@ -21,11 +25,25 @@
         "@bb-vendure/elasticsearch-plugin": "^2.2.7-bb.3",
         "@bb-vendure/email-plugin": "^2.2.7-bb.3",
         "@nestjs/axios": "^3.0.2",
+<<<<<<< HEAD
         "typescript": "5.3.3"
     },
     "devDependencies": {
         "@bb-vendure/testing": "^2.2.7-bb.3",
         "@bb-vendure/ui-devkit": "^2.2.7-bb.3",
+=======
+        "@vendure/admin-ui-plugin": "^3.0.0",
+        "@vendure/asset-server-plugin": "^3.0.0",
+        "@vendure/common": "^3.0.0",
+        "@vendure/core": "^3.0.0",
+        "@vendure/elasticsearch-plugin": "^3.0.0",
+        "@vendure/email-plugin": "^3.0.0",
+        "typescript": "5.3.3"
+    },
+    "devDependencies": {
+        "@vendure/testing": "^3.0.0",
+        "@vendure/ui-devkit": "^3.0.0",
+>>>>>>> upstream/master
         "commander": "^12.0.0",
         "concurrently": "^8.2.2",
         "csv-stringify": "^6.4.6",

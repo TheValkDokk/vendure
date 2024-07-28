@@ -2805,7 +2805,12 @@ export type Mutation = {
     duplicateEntity: DuplicateEntityResult;
     flushBufferedJobs: Success;
     importProducts?: Maybe<ImportInfo>;
-    /** Authenticates the user using the native authentication strategy. This mutation is an alias for `authenticate({ native: { ... }})` */
+    /**
+     * Authenticates the user using the native authentication strategy. This mutation is an alias for authenticate({ native: { ... }})
+     *
+     * The `rememberMe` option applies when using cookie-based sessions, and if `true` it will set the maxAge of the session cookie
+     * to 1 year.
+     */
     login: NativeAuthenticationResult;
     logout: Success;
     /**
@@ -6907,6 +6912,7 @@ export type SearchGetAssetsQuery = {
         totalItems: number;
         items: Array<{
             productId: string;
+            productVariantId: string;
             productName: string;
             productVariantName: string;
             productAsset?: {
@@ -18024,6 +18030,10 @@ export const SearchGetAssetsDocument = {
                                         kind: 'SelectionSet',
                                         selections: [
                                             { kind: 'Field', name: { kind: 'Name', value: 'productId' } },
+                                            {
+                                                kind: 'Field',
+                                                name: { kind: 'Name', value: 'productVariantId' },
+                                            },
                                             { kind: 'Field', name: { kind: 'Name', value: 'productName' } },
                                             {
                                                 kind: 'Field',

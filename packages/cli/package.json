@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "@bb-vendure/cli",
     "version": "2.2.7-bb.3",
+=======
+    "name": "@vendure/cli",
+    "version": "3.0.0",
+>>>>>>> upstream/master
     "description": "A modern, headless ecommerce framework",
     "repository": {
         "type": "git",
@@ -16,7 +21,7 @@
     "homepage": "https://www.vendure.io/",
     "funding": "https://github.com/sponsors/michaelbromley",
     "private": false,
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "type": "commonjs",
     "scripts": {
         "build": "rimraf dist && tsc -p ./tsconfig.cli.json && ts-node ./build.ts",
@@ -36,6 +41,10 @@
     "dependencies": {
         "@bb-vendure/common": "^2.2.7-bb.3",
         "@clack/prompts": "^0.7.0",
+<<<<<<< HEAD
+=======
+        "@vendure/common": "^3.0.0",
+>>>>>>> upstream/master
         "change-case": "^4.1.2",
         "commander": "^11.0.0",
         "dotenv": "^16.4.5",
@@ -46,7 +55,11 @@
         "tsconfig-paths": "^4.2.0"
     },
     "devDependencies": {
+<<<<<<< HEAD
         "@bb-vendure/core": "^2.2.7-bb.3",
+=======
+        "@vendure/core": "^3.0.0",
+>>>>>>> upstream/master
         "typescript": "5.3.3"
     },
     "gitHead": "d87d0f35c2f6e2effe09ef8f666db9cce47768ad"

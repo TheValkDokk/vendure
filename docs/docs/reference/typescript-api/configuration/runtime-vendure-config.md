@@ -11,7 +11,11 @@ import MemberDescription from '@site/src/components/MemberDescription';
 
 ## RuntimeVendureConfig
 
+<<<<<<< HEAD
 <GenerationInfo sourceFile="packages/core/src/config/vendure-config.ts" sourceLine="1192" packageName="@bb-vendure/core" />
+=======
+<GenerationInfo sourceFile="packages/core/src/config/vendure-config.ts" sourceLine="1201" packageName="@vendure/core" />
+>>>>>>> upstream/master
 
 This interface represents the VendureConfig object available at run-time, i.e. the user-supplied
 config values have been merged with the <a href='/reference/typescript-api/configuration/default-config#defaultconfig'>defaultConfig</a> values.
